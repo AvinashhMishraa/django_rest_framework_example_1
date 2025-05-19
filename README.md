@@ -7,7 +7,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <code>py</code>  &nbsp;&nbsp;----------------------------------------------------&nbsp;&nbsp; to start a python terminal. If you want to exit, use <code>exit()</code>             <br>
 <code>pip install --upgrade pip</code>  &nbsp;&nbsp;-------------------------&nbsp;&nbsp; to upgrade **pip**                                                                       <br>
 <code>pip list</code>  &nbsp;&nbsp;---------------------------------------------&nbsp;&nbsp; to show all the packages we already have in the global scope of the system            <br>
-<code>pip freeze</code>  &nbsp;&nbsp;-------------------------------------------&nbsp;&nbsp;  to show all the packages we already have in the global scope of the system                <br>
+<code>pip freeze</code>  &nbsp;&nbsp;-------------------------------------------&nbsp;&nbsp; to show all the packages we already have in the global scope of the system                <br>
 <code>py -m venv env</code>                                  ---------->  to create a **python environment** to keep only necessary files and packages required for the project    <br>
 <code>./env/Scripts/activate</code>                          ---------->  to activate the virtual environment in **Windows**                                                       <br>
 <code>pip freeze</code>                                      ---------->  nothing in the virtual environement as of now                                                            <br>
