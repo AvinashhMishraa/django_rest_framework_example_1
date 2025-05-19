@@ -14,7 +14,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <code>pip install django</code>                              ---------->  to install Django                                                                                        <br>
 <code>pip freeze</code>                                      ---------->  to check what all dependencies got installed alomng with Django                                          <br>
 <code>django-admin startproject company_drf_api</code> .     ---------->  use **dot** to create the files at the **root folder**                                                   <br>
-<code>py manage.py runserver</code>                          ---------->  <code>http://127.0.0.1:8000/</code>  &nbsp;&nbsp;or&Nbsp;&nbsp;  <code>localhost:8000</code>        <code>< py ./manage.py runserver ></code>
+<code>py manage.py runserver</code>                          ---------->  <code>http://127.0.0.1:8000/</code>  &nbsp;&nbsp;or&nbsp;&nbsp;  <code>localhost:8000</code>        <code>< py ./manage.py runserver ></code>
 
 <br><br>
 
