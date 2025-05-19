@@ -7,14 +7,14 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <code>py</code>  &nbsp;&nbsp;----------------------------------------------------&nbsp;&nbsp; to start a python terminal. If you want to exit, use <code>exit()</code>             <br>
 <code>pip install --upgrade pip</code>  &nbsp;&nbsp;-------------------------&nbsp;&nbsp; to upgrade **pip**                                                                       <br>
 <code>pip list</code>  &nbsp;&nbsp;---------------------------------------------&nbsp;&nbsp; to show all the packages we already have in the global scope of the system            <br>
-<code>pip freeze</code>  &nbsp;&nbsp;-------------------------------------------&nbsp;&nbsp; to show all the packages we already have in the global scope of the system                <br>
-<code>py -m venv env</code>                                  ---------->  to create a **python environment** to keep only necessary files and packages required for the project    <br>
+<code>pip freeze</code>  &nbsp;&nbsp;-------------------------------------------&nbsp;&nbsp; to show all the packages we already have in the global scope of the system            <br>
+<code>py -m venv env</code>  &nbsp;&nbsp;---------------------------------------&nbsp;&nbsp; to create a **python environment** to keep only necessary files and packages required for the project    <br>
 <code>./env/Scripts/activate</code>                          ---------->  to activate the virtual environment in **Windows**                                                       <br>
 <code>pip freeze</code>                                      ---------->  nothing in the virtual environement as of now                                                            <br>
 <code>pip install django</code>                              ---------->  to install Django                                                                                        <br>
 <code>pip freeze</code>                                      ---------->  to check what all dependencies got installed alomng with Django                                          <br>
 <code>django-admin startproject company_drf_api</code> .     ---------->  use **dot** to create the files at the **root folder**                                                   <br>
-<code>py manage.py runserver</code>                          ---------->  <code>http://127.0.0.1:8000/</code>  &nbsp;&nbsp;or&nbsp;&nbsp;  <code>localhost:8000</code>        <code>< py ./manage.py runserver ></code>
+<code>py manage.py runserver</code>                          ---------->  <code>http://127.0.0.1:8000/</code>  &nbsp;&nbsp;or&nbsp;&nbsp;  <code>http://localhost:8000/</code>        <code>< py ./manage.py runserver ></code>
 
 <br><br>
 
