@@ -109,7 +109,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-> <code>company_api/api/views.py</code>  &nbsp;&nbsp;-----------------&nbsp;&nbsp; create a Company view  called <code>CompanyViewSet()</code>
+> <code>company_api/api/views.py</code>  &nbsp;&nbsp;-----------------&nbsp;&nbsp; create a **Company view**  called <code>CompanyViewSet()</code>
 > <pre>
 > from django.shortcuts import render
 > from rest_framework import viewsets
