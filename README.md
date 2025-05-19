@@ -24,7 +24,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 >
 > def home_page(request):
 >	print("home page requested")
->	return HttpResponse("This is homepage")       # return HttpResponse("This is homepage")
+>	return HttpResponse("This is homepage")           # return HttpResponse("This is homepage")
 > </pre>
 
 
