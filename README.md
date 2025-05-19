@@ -16,7 +16,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <code>django-admin startproject company_drf_api</code> &nbsp;&nbsp;-----------&nbsp;&nbsp; use **dot** to create the files at the **root folder**   <br>
 <code>py manage.py runserver</code> &nbsp; <code>py ./manage.py runserver</code> &nbsp;&nbsp;-&nbsp;&nbsp; <code>http://127.0.0.1:8000/</code>  &nbsp;&nbsp;or&nbsp;&nbsp;  <code>http://localhost:8000/</code>
 
-<br><br>
+<br>
 
 > create a file called <code>company_api/company_drf_api/views.py</code>
 > <pre>
