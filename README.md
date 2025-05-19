@@ -63,9 +63,13 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-py ./manage.py startapp api                                     ----------> creates an rest api called "api"
-                                                                            in this case, it will not create a separate settings.py file and consider that in the company_drf_api
+> To create a REST API called "api"
+> <pre>
+> py ./manage.py startapp api
+> </pre>
+> It will not create a separate <code>settings.py</code> file. Rather it will consider the already created <code>settings.py</code> file in the <code>company_drf_api</code> folder
 																
+<br>
 
 company_api/api/model.py                                        ----------> create a Company model "Company()"
 
