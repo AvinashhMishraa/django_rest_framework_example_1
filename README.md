@@ -49,8 +49,9 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > To install Django REST Framework
 > <pre>
 > pip install djangorestframework                                 
-> python.exe -m pip install --upgrade pi
 > </pre>
+
+<br>
 
 company_api/company_drf_api/settings.py     ===>    INSTALLED_APPS = [
 														...,
