@@ -30,9 +30,9 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <br>
 
 > <code>company_api/company_drf_api/urls.py</code>
->
-> from .views import home_page
 > <pre>
+> from .views import home_page
+> 
 > urlpatterns = [
 >	path('home', home_page)
 > ]
