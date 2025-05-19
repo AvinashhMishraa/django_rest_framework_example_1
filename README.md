@@ -121,19 +121,25 @@ class CompanyViewSet(viewsets.ModelViewSet):
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
 </pre>
-																			 
-company_api/api/urls.py                                         ----------> from django.contrib import admin
-																			from django.urls import path, include
-																			from api.views import CompanyViewSet
-                                                                            from rest_framework import routers
 
-                                                                            router = routers.DefaultRouter()
-                                                                            router.register(r'companies', CompanyViewSet)
+<br>
 
-																			urlpatterns = [
-																				path('', include(router.urls))
-																			]
+> <code>company_api/api/urls.py</code> 
+> <pre>
+> from django.contrib import admin														
+> from django.urls import path, include													
+> from api.views import CompanyViewSet
+> from rest_framework import routers
+>
+> router = routers.DefaultRouter()
+> router.register(r'companies', CompanyViewSet)
+>					
+> urlpatterns = [		
+>	path('', include(router.urls))														
+> ]
+</pre>
 
+<br>
 
 company_api/company_drf_api/settings.py                         ----------> INSTALLED_APPS = [
 																				...,
