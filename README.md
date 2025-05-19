@@ -126,8 +126,8 @@ class CompanyViewSet(viewsets.ModelViewSet):
 
 > <code>company_api/api/urls.py</code> 
 > <pre>
-> from django.contrib import admin													
-> from django.urls import path, include	
+> from django.contrib import admin
+> from django.urls import path, include
 > from api.views import CompanyViewSet
 > from rest_framework import routers
 >
@@ -135,7 +135,7 @@ class CompanyViewSet(viewsets.ModelViewSet):
 > router.register(r'companies', CompanyViewSet)
 >
 > urlpatterns = [
->	path('', include(router.urls))
+>		path('', include(router.urls))
 > ]
 </pre>
 
