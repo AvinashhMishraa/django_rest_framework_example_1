@@ -9,7 +9,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <code>pip list</code> &nbsp;&nbsp;---------------------------------------------&nbsp;&nbsp; to show all the packages we already have in the global scope of the system             <br>
 <code>pip freeze</code> &nbsp;&nbsp;----------------------------------------&nbsp;&nbsp; to show all the packages we already have in the global scope of the system             <br>
 <code>py -m venv env</code> &nbsp;&nbsp;------------------------------------------&nbsp;&nbsp; to create an **environment** to keep only necessary packages required for the project <br>
-<code>./env/Scripts/activate</code> &nbsp;&nbsp;----------------------------------&nbsp;&nbsp; to activate the virtual environment in **Windows**  <br>
+<code>./env/Scripts/activate</code> &nbsp;&nbsp;---------------------------------&nbsp;&nbsp; to activate the virtual environment in **Windows**  <br>
 <code>pip freeze</code> &nbsp;&nbsp;----------------------------------------&nbsp;&nbsp; nothing in the virtual environement as of now <br>
 <code>pip install django</code>  &nbsp;&nbsp;-------------------------------&nbsp;&nbsp;  to install Django <br>
 <code>pip freeze</code> &nbsp;&nbsp;------------------------------&nbsp;&nbsp; to check what all dependencies got installed alomng with Django <br>
