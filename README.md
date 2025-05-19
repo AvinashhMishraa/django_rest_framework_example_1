@@ -53,11 +53,15 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-company_api/company_drf_api/settings.py     ===>    INSTALLED_APPS = [
-														...,
-														'rest_framework',
-													]
+> <code>company_api/company_drf_api/settings.py</code>
+> <pre>
+> INSTALLED_APPS = [
+>	...,
+>	'rest_framework',
+> ]
+> </pre>
 
+<br>
 
 py ./manage.py startapp api                                     ----------> creates an rest api called "api"
                                                                             in this case, it will not create a separate settings.py file and consider that in the company_drf_api
