@@ -160,11 +160,10 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > ]
 </pre>
 
+<br>
 
-py ./manage.py makemigrations                                   ----------> to make migrations for models
-
-
-py ./manage.py migrate                                          ----------> to migrate
+> <code>py ./manage.py makemigrations</code> &nbsp;&nbsp;----------&nbsp;&nbsp; to make migrations for models
+> <code>py ./manage.py migrate</code> &nbsp;&nbsp;-----------------&nbsp;&nbsp; to migrate
 
 
 py ./manage.py runserver                                        ----------> http://localhost:8000/api/v1/           &           http://localhost:8000/api/v1/companies/
