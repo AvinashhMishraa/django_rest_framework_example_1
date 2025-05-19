@@ -1,0 +1,318 @@
+https://www.django-rest-framework.org/#quickstart
+https://www.geeksforgeeks.org/django-rest-framework-adding-additional-field-to-modelserializer/
+
+
+create your project folder
+go into it through a terminal either using cmd, powershell, gitbash or your code editior
+py --version                                                 ----------> to see the python version
+py                                                           ----------> to start a python terminal. If you want to exit, use exit()
+pip install --upgrade pip                                    ---------->  to upgrade pip
+pip list                                                     ---------->  to see all the packages we already have in the global scope of the system
+pip freeze                                                   ---------->  to see all the packages we already have in the global scope of the system
+py -m venv env                                               ---------->  to create a python environment to keep only necessary files and packages required for the project
+./env/Scripts/activate                                       ---------->  to activate the virtual environment
+pip freeze                                                   ---------->  nothing in the virtual environement as of now
+pip install django                                           ---------->  to install Django
+pip freeze                                                   ---------->  to check what all dependencies got installed alomng with Django   
+django-admin startproject company_drf_api .                  ---------->  use dot to create the files at the root folder
+py manage.py runserver                                       ---------->  http://127.0.0.1:8000/     or      localhost:8000        [ py ./manage.py runserver ]
+
+
+create a file called company_api/company_drf_api/views.py     ====>     from django.http import HttpResponse
+
+																		def home_page(request):
+																		   print("home page requested")
+																		   return HttpResponse("This is homepage")       # return HttpResponse("<h1>This is homepage</h1>")
+
+
+company_api/company_drf_api/urls.py    ====>    from .views import home_page
+
+												urlpatterns = [
+													path('home', home_page)
+												]
+
+
+Now open the app    ----------------------->    localhost:8000/home/
+
+
+pip install djangorestframework                                 ---------->  to install Django REST Framework
+python.exe -m pip install --upgrade pi
+
+
+company_api/company_drf_api/settings.py     ===>    INSTALLED_APPS = [
+														...,
+														'rest_framework',
+													]
+
+
+py ./manage.py startapp api                                     ----------> creates an rest api called "api"
+                                                                            in this case, it will not create a separate settings.py file and consider that in the company_drf_api
+																
+
+company_api/api/model.py                                        ----------> create a Company model "Company()"
+
+
+company_api/api/serializers.py                                  ----------> import serializers & Company
+                                                                            create a Company Serializer "CompanySerializer()"
+																			 
+																			 
+company_api/api/views.py                                        ----------> import render, viewsets, Company model, Company serializer
+                                                                            create a Company view "CompanyViewSet()"
+																			 
+																			 
+company_api/api/urls.py                                         ----------> from django.contrib import admin
+																			from django.urls import path, include
+																			from api.views import CompanyViewSet
+                                                                            from rest_framework import routers
+
+                                                                            router = routers.DefaultRouter()
+                                                                            router.register(r'companies', CompanyViewSet)
+
+																			urlpatterns = [
+																				path('', include(router.urls))
+																			]
+
+
+company_api/company_drf_api/settings.py                         ----------> INSTALLED_APPS = [
+																				...,
+																				'api'
+																			]
+																			
+																			
+company_api/company_drf_api/urls.py                             ----------> from django.urls import include
+																			url_patterns = [
+																				...,
+																				path("api/v1/",include('api.urls'))
+																			]
+
+py ./manage.py makemigrations                                   ----------> to make migrations for models
+
+
+py ./manage.py migrate                                          ----------> to migrate
+
+
+py ./manage.py runserver                                        ----------> http://localhost:8000/api/v1/           &           http://localhost:8000/api/v1/companies/
+
+
+Create a couple of companies using POST and then GET them       ----------> http://localhost:8000/api/v1/companies/?format=json
+Also check if tables are created in the DB browser for SQLite               http://localhost:8000/api/v1/companies
+Also play with Postman now
+
+
+company_api/api/serializers.py                                  ----------> to expose the id of the companies, just add the following line in the CompanySerializer() :
+																			compnay_id = serializers.ReadonlyField()
+																			
+																			
+Now what if we want to correct the spelling mistake of a column "compnay_id" in the Company TABLE?
+	STEP-1: Copy all the data from the field "compnay_id
+	STEP-2: Create a new migration to add a new column called "company_id"
+	STEP-3. Remove the column "compnay_id" by making a new migration
+	
+	
+company_api/api/model.py                                         ----------> add a new field in the Company model like the follwoing :
+										                                     company_id = models.IntegerField(null=True)
+
+py manage.py makemigrations
+py manage.py migrate
+
+py manage.py makemigrations api --empty                          ----------> python manage.py makemigrations your_app_name --empty        # to generate an empty migration
+
+python manage.py makemigrations --name add_user_profile          ----------> to give a name to a migration file
+
+																			
+py ./manage.py showmigrations                                    ----------> to show all migrations
+
+
+UPDATE django_migrations
+SET name = '0001_create_company_model'
+WHERE app = 'api' AND name = '0001_initial';
+
+
+py ./manage.py shell                                              ---------> to open Django ORM
+
+from django.db import connection
+with connection.cursor() as cursor:
+    cursor.execute("""
+        UPDATE django_migrations
+        SET name = '0001_create_company_model'
+        WHERE app = 'api' AND name = '0001_initial';
+    """)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PRAGMA table_info('api_company');
+
+SELECT sql 
+FROM sqlite_master 
+WHERE type = 'table' AND name = 'api_company';
+
+
+Views are of 2 types :
+	1) Function based view
+	2) Class based view
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+To add an additional field to ModelSerializer without adding it in the Model :
+
+class CompanySerializer(serializers.HyperlinkedModelSerializer):
+    summary = serializers.SerializerMethodField()
+    class Meta:
+        model = Company
+        fields = ["url", "id", "name", "location", "about", "type", "added_date", "active", "summary"]
+    def get_summary(self, obj):         
+        return f"{obj.name} is a {obj.location} based {obj.type} company"
+		
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to add a column to a model in Django Rest Framework ?
+
+class Company(models.Model):
+	ceo = models.CharField(max_length=100, null=True, blank=True)        # new column
+
+py manage.py makemigrations
+
+py manage.py migrate                           --->  I am getting the error while trying to add "ceo" column to the company model :
+
+django.db.utils.OperationalError: table "api_company" already exists     ------     likely because the migration history and actual database schema are out of sync
+                                                                                    This happens because :
+																					    - You deleted migration files manually.
+																					    - You dropped or recreated the database table outside of Django.
+																					    - You’re starting fresh but the migration state is corrupted.
+
+py manage.py migrate api --fake-initial         # it will delete the model along with it's migrations             <py manage.py migrate api --fake>
+
+Now add all the records from the begining
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to create a Custom URL ? 
+
+http://localhost:8000/api/v1/companies/      has all the APIs for companies
+http://localhost:8000/api/v1/employees/      has all the APIs for employees
+
+http://localhost:8000/api/v1/companies/{company_id}/employees       -      how to get all employees of a particular company?
+
+http://localhost:8000/api/v1/companies/1/employees                  -      Page not found (404)
+
+api/views.py    ------>     from rest_framework.decorators import action
+							from rest_framework.response import Response
+						
+							@action(detail=True, methods=['get'])
+							def employees(self, request, pk=None):
+								# print('get employess of company ', pk)           			# to check if the method is called by http://localhost:8000/api/v1/companies/1/employees
+								company = Company.objects.get(pk=pk)
+								emps = Employee.objects.filter(company=company)
+								emps_serializer = EmployeeSerializer(emps, many=True, context={'request' : request})
+								return Response(emps_serializer.data)
+								
+http://localhost:8000/api/v1/companies/1/employees/   ----->   now works for company 1 because it exists
+http://localhost:8000/api/v1/companies/2/employees/   ----->   now works for company 2 because it exists
+http://localhost:8000/api/v1/companies/3/employees/   ----->   now works for company 3 because it exists
+http://localhost:8000/api/v1/companies/4/employees/   ----->   does not work for company 4 because it may not exist
+
+So put it in Try-Exception block like below:
+
+							def employees(self, request, pk=None):
+								try:
+									company = Company.objects.get(pk=pk)
+									emps = Employee.objects.filter(company=company)
+									emps_serializer = EmployeeSerializer(emps, many=True, context={'request' : request})
+									return Response(emps_serializer.data)
+								except Exception as e:
+									print(e)
+									return Response({
+										'message' : 'Company might not exist !! ERROR'
+									})
+								
+http://localhost:8000/api/v1/companies/4/employees/   ----->   now works and does not throw error for company 4 even when it does not exist
+http://localhost:8000/api/v1/companies/5/employees/   ----->   now works even there is no company with id = 5
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Now if you want to allow only the READ operation on the browser so that the CREATE, UPDATE & DELETE operations can only be done through Application backend, you will have to disable the permissions accordingly for unauthenticated user like the foolowing :
+
+company_api/company_drf_api/settings.py       ----->     
+
+															REST_FRAMEWORK = {
+																# Use Django's standard `django.contrib.auth` permissions,
+																# or allow read-only access for unauthenticated users.
+																'DEFAULT_PERMISSION_CLASSES': [
+																	'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+																]
+															}
+
+
+Now go to both the root urls and you will see there is no form to create a record:
+															{
+																"companies": "http://localhost:8000/api/v1/companies/",
+																"employees": "http://localhost:8000/api/v1/employees/"
+															}
+												
+												
+Now let's try to create, delete or update a company or an employee through Postman and see what happens :
+
+POST  ==>  http://localhost:8000/api/v1/companies/      =======>  ERROR - 403 Forbidden : Authentication credentials were not provided.
+{
+    "name": "Bharat LLM",
+    "location": "Hyderabad",
+    "about": "It is an AI company working on India's own indegenious large language model.",
+    "type": "IT",
+    "active": true,
+    "ceo": "Bechan Mishra"
+}
+
+Similarly try to delete or update a companyor an employee, you will get the same 403 Forbidden Error.
+
+Now similarly to disable even the browsable API i.e, to disable even the read (GET) operation on browser, you need to pass JSONRenderer to your Default_Renderer_Classes like the following :
+
+															REST_FRAMEWORK = {
+																'DEFAULT_RENDERER_CLASSES': [
+																	'rest_framework.renderers.JSONRenderer'
+																]
+															}
+															
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Now let's handle the things as admin :
+
+For that we need to first register our models at 	-----   api/admin.py
+
+															from api.models import Company, Employee
+															admin.site.register(Company)
+															admin.site.register(Employee)
+
+
+http://localhost:8000/admin/    --------    http://localhost:8000/admin/login/?next=/admin/
+
+python manage.py createsuperuser
+
+
+To delete a user :       Open the ORM using the command     ----    <python manage.py shell>
+
+																	user = User.objects.get(username='admin')
+																	user.delete()
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+To customize the Django Admin :                             api/admin.py
+						
+															class CompanyAdmin(admin.ModelAdmin):
+																list_display = ('name', 'location', 'type', 'active')
+																    search_fields = ('name',)
+															
+															class EmployeeAdmin(admin.ModelAdmin):
+																list_display = ('name', 'email', 'company', 'position')
+																search_fields = ('name', 'email',)       #  search_fields = ('name', 'email', 'company',) will throw foreign key error
+																list_filter = ('company',)               #  to filter employees based on company filter
+																
+																
+
+															admin.site.register(Company, CompanyAdmin)
+															admin.site.register(Employee, EmployeeAdmin)
+															
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
