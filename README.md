@@ -27,13 +27,18 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 >	return HttpResponse("This is homepage")           # return HttpResponse("This is homepage")
 > </pre>
 
+<br>
 
-company_api/company_drf_api/urls.py    ====>    from .views import home_page
+> <code>company_api/company_drf_api/urls.py</code>
+>
+> from .views import home_page
+> <pre>
+> urlpatterns = [
+>	path('home', home_page)
+> ]
+> </pre>
 
-												urlpatterns = [
-													path('home', home_page)
-												]
-
+<br>
 
 Now open the app    ----------------------->    localhost:8000/home/
 
