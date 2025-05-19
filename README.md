@@ -71,7 +71,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 																
 <br>
 
-> <code>company_api/api/model.py</code>  &nbsp;&nbsp;------------------&nbsp;&nbsp; create a model called <code>Company</code>
+> <code>company_api/api/model.py</code>  &nbsp;&nbsp;------------------&nbsp;&nbsp; create a **model** called <code>Company</code>
 > <pre>
 > from django.db import models
 >
