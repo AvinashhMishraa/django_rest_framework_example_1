@@ -71,8 +71,28 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 																
 <br>
 
-<code>company_api/api/model.py</code>  &nbsp;&nbsp;------------------&nbsp;&nbsp; create a model called <code>Company</code>
+> <code>company_api/api/model.py</code>  &nbsp;&nbsp;------------------&nbsp;&nbsp; create a model called <code>Company</code>
+> <pre>
+> from django.db import models
+>
+> # Company model
+> class Company(models.Model):
+>    id = models.IntegerField(primary_key=True)
+>    name = models.CharField(max_length=50)
+>    location = models.CharField(max_length=50)
+>    about = models.TextField()
+>    type = models.CharField(max_length=100,
+>                            choices = (
+>                                ('IT', 'IT'),
+>                                ('Finance', 'Finance'),
+>                                ('E-Commerce', 'E-Commerce')
+>                            ))
+>    added_date = models.DateTimeField(auto_now=True)
+>    active = models.BooleanField(default=True)
+>    ceo = models.CharField(max_length=100, null=True, blank=True
+</pre>
 
+<br>
 
 company_api/api/serializers.py                                  ----------> import serializers & Company
                                                                             create a Company Serializer "CompanySerializer()"
