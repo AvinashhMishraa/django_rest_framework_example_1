@@ -41,7 +41,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <br>
 
 >
-> Now open the app  &nbsp;&nbsp;-----------------------&nbsp;&nbsp; <code>localhost:8000/home/</code>
+> Now open the app  &nbsp;&nbsp;-----------------------&nbsp;&nbsp; <code>http://localhost:8000/home/</code>
 >
 
 <br>
