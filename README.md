@@ -18,11 +18,14 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br><br>
 
-create a file called company_api/company_drf_api/views.py     ====>     from django.http import HttpResponse
-
-																		def home_page(request):
-																		   print("home page requested")
-																		   return HttpResponse("This is homepage")       # return HttpResponse("<h1>This is homepage</h1>")
+> create a file called <code>company_api/company_drf_api/views.py</code>
+> <pre>
+> from django.http import HttpResponse
+>
+> def home_page(request):
+>	print("home page requested")
+>	return HttpResponse("This is homepage")       # return HttpResponse("<h1>This is homepage</h1>")
+> </pre>
 
 
 company_api/company_drf_api/urls.py    ====>    from .views import home_page
