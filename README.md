@@ -71,7 +71,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 																
 <br>
 
-company_api/api/model.py                                        ----------> create a Company model "Company()"
+<code>company_api/api/model.py</code>  &nbsp;&nbsp;------------------&nbsp;&nbsp; create a model called <code>Company</code>
 
 
 company_api/api/serializers.py                                  ----------> import serializers & Company
