@@ -94,8 +94,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-company_api/api/serializers.py                                  ----------> import serializers & Company
-                                                                            create a Company Serializer "CompanySerializer()"
+<code>company_api/api/serializers.py</code> &nbsp;&nbsp;-----------------&nbsp;&nbsp; create a **Company Serializer** <code>CompanySerializer()</code>
 																			 
 																			 
 company_api/api/views.py                                        ----------> import render, viewsets, Company model, Company serializer
