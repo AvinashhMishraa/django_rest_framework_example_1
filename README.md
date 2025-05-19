@@ -44,9 +44,13 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > Now open the app  &nbsp;&nbsp;-----------------------&nbsp;&nbsp; <code>localhost:8000/home/</code>
 >
 
-pip install djangorestframework                                 ---------->  to install Django REST Framework
-python.exe -m pip install --upgrade pi
+<br>
 
+> To install Django REST Framework
+> <pre>
+> pip install djangorestframework                                 
+> python.exe -m pip install --upgrade pi
+> </pre>
 
 company_api/company_drf_api/settings.py     ===>    INSTALLED_APPS = [
 														...,
