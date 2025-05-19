@@ -65,7 +65,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 > To create a REST API called <code>api</code>
 > <pre>
-> py ./manage.py startapp api
+> py manage.py startapp api
 > </pre>
 > It will not create a separate <code>settings.py</code> file. Rather it will consider the already created <code>settings.py</code> file in the <code>company_drf_api</code> folder.
 																
