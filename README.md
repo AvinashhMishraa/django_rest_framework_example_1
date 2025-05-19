@@ -94,8 +94,18 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-<code>company_api/api/serializers.py</code> &nbsp;&nbsp;-----------------&nbsp;&nbsp; create a **Company Serializer** <code>CompanySerializer()</code>
-																			 
+> <code>company_api/api/serializers.py</code> &nbsp;&nbsp;-----------------&nbsp;&nbsp; create a **Company Serializer** <code>CompanySerializer()</code>
+> <pre>
+> from rest_framework import serializers
+> from api.models import Company
+>
+> # Company serializer
+> class CompanySerializer(serializers.HyperlinkedModelSerializer):
+>    id = serializers.ReadOnlyField()
+>    class Meta:
+>	model = Company
+>	fields = "__all__
+> </pre>																		 
 																			 
 company_api/api/views.py                                        ----------> import render, viewsets, Company model, Company serializer
                                                                             create a Company view "CompanyViewSet()"
