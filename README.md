@@ -151,11 +151,15 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-company_api/company_drf_api/urls.py                             ----------> from django.urls import include
-																			url_patterns = [
-																				...,
-																				path("api/v1/",include('api.urls'))
-																			]
+> <code>company_api/company_drf_api/urls.py</code>
+> <pre>
+> from django.urls import include	
+> url_patterns = [
+>	...,
+>	 path("api/v1/",include('api.urls'))
+> ]
+</pre>
+
 
 py ./manage.py makemigrations                                   ----------> to make migrations for models
 
