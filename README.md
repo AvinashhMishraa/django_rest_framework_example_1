@@ -141,11 +141,13 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-company_api/company_drf_api/settings.py                         ----------> INSTALLED_APPS = [
-																				...,
-																				'api'
-																			]
-																			
+<code>company_api/company_drf_api/settings.py</code> &nbsp;&nbsp;----------&nbsp;&nbsp; 
+<pre>
+INSTALLED_APPS = [
+	...,
+	'api'
+]
+</pre>																		
 																			
 company_api/company_drf_api/urls.py                             ----------> from django.urls import include
 																			url_patterns = [
