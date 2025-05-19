@@ -1,21 +1,22 @@
 https://www.django-rest-framework.org/#quickstart <br>
 https://www.geeksforgeeks.org/django-rest-framework-adding-additional-field-to-modelserializer/
-<br>
+<br><br>
 Create a project folder <code>company_api</code>                                                                                                                                   <br>
 Go into it through a terminal either using <code>cmd</code> , <code>powershell</code>, <code>gitbash</code> or any <code>code editior</code>                                       <br>
 <code>py --version</code>                                    ----------> to see the python version                                                                                 <br>
-py                                                           ----------> to start a python terminal. If you want to exit, use exit()
-pip install --upgrade pip                                    ---------->  to upgrade pip
-pip list                                                     ---------->  to see all the packages we already have in the global scope of the system
-pip freeze                                                   ---------->  to see all the packages we already have in the global scope of the system
-py -m venv env                                               ---------->  to create a python environment to keep only necessary files and packages required for the project
-./env/Scripts/activate                                       ---------->  to activate the virtual environment
-pip freeze                                                   ---------->  nothing in the virtual environement as of now
-pip install django                                           ---------->  to install Django
-pip freeze                                                   ---------->  to check what all dependencies got installed alomng with Django   
-django-admin startproject company_drf_api .                  ---------->  use dot to create the files at the root folder
-py manage.py runserver                                       ---------->  http://127.0.0.1:8000/     or      localhost:8000        [ py ./manage.py runserver ]
+<code>py</code>                                              ----------> to start a python terminal. If you want to exit, use <code>exit()</code>                                  <br>
+<code>pip install --upgrade pip</code>                       ---------->  to upgrade pip                                                                                           <br>
+<code>pip list</code>                                        ---------->  to show all the packages we already have in the global scope of the system                               <br>
+<code>pip freeze</code>                                      ---------->  to show all the packages we already have in the global scope of the system                               <br>
+<code>py -m venv env</code>                                  ---------->  to create a **python environment** to keep only necessary files and packages required for the project    <br>
+<code>./env/Scripts/activate</code>                          ---------->  to activate the virtual environment in **Windows**                                                       <br>
+<code>pip freeze</code>                                      ---------->  nothing in the virtual environement as of now                                                            <br>
+<code>pip install django</code>                              ---------->  to install Django                                                                                        <br>
+<code>pip freeze</code>                                      ---------->  to check what all dependencies got installed alomng with Django                                          <br>
+<code>django-admin startproject company_drf_api</code> .     ---------->  use **dot** to create the files at the **root folder**                                                   <br>
+<code>py manage.py runserver</code>                          ---------->  <code>http://127.0.0.1:8000/</code>  &nbsp;&nbsp;or&Nbsp;&nbsp;  <code>localhost:8000</code>        <code>< py ./manage.py runserver ></code>
 
+<br><br>
 
 create a file called company_api/company_drf_api/views.py     ====>     from django.http import HttpResponse
 
