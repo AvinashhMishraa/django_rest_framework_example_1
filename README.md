@@ -103,8 +103,8 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > class CompanySerializer(serializers.HyperlinkedModelSerializer):
 >    id = serializers.ReadOnlyField()
 >    class Meta:
->	model = Company
->	fields = "__all__
+>		model = Company
+>		fields = "__all__
 > </pre>																		 
 																			 
 company_api/api/views.py                                        ----------> import render, viewsets, Company model, Company serializer
