@@ -3,7 +3,7 @@ https://www.geeksforgeeks.org/django-rest-framework-adding-additional-field-to-m
 <br><br>
 Create a project folder <code>company_api</code>                                                                                                                                   <br>
 Go into it through a terminal either using <code>cmd</code> , <code>powershell</code>, <code>gitbash</code> or any <code>code editior</code>                                       <br>
-<code>py --version</code>  &nbsp;&nbsp;----------------------------------------&nbsp; to see the python version                                                                                 <br>
+<code>py --version</code>  &nbsp;&nbsp;-----------------------------------------&nbsp; to see the python version                                                                                 <br>
 <code>py</code>  &nbsp;&nbsp;----------------------------------------------------&nbsp; to start a python terminal. If you want to exit, use <code>exit()</code>                                  <br>
 <code>pip install --upgrade pip</code>  &nbsp;&nbsp;-------------------------&nbsp; to upgrade **pip**                                                                                           <br>
 <code>pip list</code>  &nbsp;&nbsp;---------------------------------------------&nbsp; to show all the packages we already have in the global scope of the system                               <br>
