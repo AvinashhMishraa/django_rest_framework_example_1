@@ -40,8 +40,9 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-Now open the app    ----------------------->    localhost:8000/home/
-
+>
+> Now open the app  &nbsp;&nbsp;-----------------------&nbsp;&nbsp; localhost:8000/home/
+>
 
 pip install djangorestframework                                 ---------->  to install Django REST Framework
 python.exe -m pip install --upgrade pi
