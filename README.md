@@ -1,10 +1,9 @@
-https://www.django-rest-framework.org/#quickstart
+https://www.django-rest-framework.org/#quickstart <br>
 https://www.geeksforgeeks.org/django-rest-framework-adding-additional-field-to-modelserializer/
-
-
-create your project folder
-go into it through a terminal either using cmd, powershell, gitbash or your code editior
-py --version                                                 ----------> to see the python version
+<br>
+Create a project folder <code>company_api</code>                                                                                                                                   <br>
+Go into it through a terminal either using <code>cmd</code> , <code>powershell</code>, <code>gitbash</code> or any <code>code editior</code>                                       <br>
+<code>py --version</code>                                    ----------> to see the python version                                                                                 <br>
 py                                                           ----------> to start a python terminal. If you want to exit, use exit()
 pip install --upgrade pip                                    ---------->  to upgrade pip
 pip list                                                     ---------->  to see all the packages we already have in the global scope of the system
