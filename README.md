@@ -227,8 +227,16 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > > **Note** &nbsp;-&nbsp; In case you want to delete the models and re-run the migrations : <br>
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>py manage.py migrate api --fake</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code># py manage.py migrate api --fake-initial</code>  <br>
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now add all the records from the begining.
+> > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However it's important to backup data before we drop a column or a table. 
 
 <br>
+
+---
+
+<br><br>
+
+
+---
 
 Now what if we want to correct the spelling mistake of a column "compnay_id" in the Company TABLE?
 	STEP-1: Copy all the data from the field "compnay_id
