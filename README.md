@@ -256,10 +256,10 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > from django.db import migrations
 >
 > def copy_ids(apps, schema_editor):
->    	Company = apps.get_model('api', 'Company')
->    	for company in Company.objects.all():
->        	company.company_id = "Bharat_" + company.id               # copy id to company_id
->        	company.save()
+>      Company = apps.get_model('api', 'Company')
+>      for company in Company.objects.all():
+>           company.company_id = "Bharat_" + company.id               # copy id to company_id
+>           company.save()
 >
 > class Migration(migrations.Migration):
 >    	operations = [
