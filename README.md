@@ -143,8 +143,8 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > <code>company_api/company_drf_api/settings.py</code> 
 > <pre>
 > INSTALLED_APPS = [
->		...,
->		'api'
+>	  ...,
+>	  'api'
 > ]
 > </pre>																	
 
@@ -154,8 +154,8 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > <pre>
 > from django.urls import include	
 > url_patterns = [
->		...,
->	 	path("api/v1/",include('api.urls'))
+>	  ...,
+>	  path("api/v1/",include('api.urls'))
 > ]
 </pre>
 
