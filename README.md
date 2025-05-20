@@ -250,7 +250,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-> Open the migration file created &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; <code>XXXX_add_company_id_to_company_model_and_populate_it.py</code> : <br>
+> Open the migration file created &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; <code>company_api/api/XXXX_add_company_id_to_company_model_and_populate_it.py</code> : <br>
 >
 > <pre>
 > from django.db import migrations
