@@ -196,13 +196,13 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > > <code>py manage.py makemigrations</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp; <code>py manage.py makemigrations --name <migration_file_name></code> <br>
 > > <pre>
 > > class Migration(migrations.Migration):
-> > 	operations = [
-> >	      migrations.AddField(
+> >    operations = [
+> >        migrations.AddField(
 > >		    model_name='company',
 > >		    name='ceo',
 > >		    field=models.CharField(blank=True, max_length=100, null=True),
-> >	      ),
-> >	 ]
+> >        ),
+> >    ]
 > > </pre>
 > > <code>py manage.py migrate</code>
 >
@@ -250,7 +250,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-> Open the migration file created &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; <code>company_api/api/XXXX_add_company_id_to_company_model_and_populate_it.py</code> <br>
+> Open the migration file is created &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; <code>company_api/api/XXXX_add_company_id_to_company_model_and_populate_it.py</code> <br>
 >
 > <pre>
 > from django.db import migrations
