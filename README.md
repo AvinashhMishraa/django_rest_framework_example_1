@@ -213,6 +213,9 @@ You can use <code>py manage.py makemigrations --empty</code> in case you didn't 
 
 <br>
 
+> **Note** &nbsp;-&nbsp; in case you want to delete the models and re-run the migrations : <br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>py manage.py migrate api --fake</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code># py manage.py migrate api --fake-initial</code>  <br>
+> Now add all the records from the begining.
 
 <br>
 
