@@ -182,7 +182,21 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 >     id = serializers.ReadOnlyField()
 > </pre>
 
-<br>																	
+<br>
+
+> To see a **table structure** & it's **definition**, use the following query in the DB browser for SQLite :
+>
+> <pre>
+> PRAGMA table_info('api_company');
+> </pre>
+>
+> <pre>
+> SELECT sql 
+> FROM sqlite_master 
+> WHERE type = 'table' AND name = 'api_company';
+> </pre>
+
+<br>														
 
 ⭐ &nbsp;**Migrations**
 > > How to add a new column <code>ceo</code> to an already existing model <code>Company</code> ?
