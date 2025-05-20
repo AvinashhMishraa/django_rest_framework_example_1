@@ -198,7 +198,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <br>
 
 > To delete a model let say <code>Company</code> : 
-> - First comment out the <code>Company()</code> model code in the company_api/api/models.py file
+> - First comment out the <code>Company()</code> model code in the <code>company_api/api/models.py</code> file
 > - Then create a migration file using <code>py manage.py makemigrations</code> <br>
 You can use <code>py manage.py makemigrations --empty</code> in case you didn't comment out the code regarding <code>Company()</code> **model**
 > - And finally in the migration file, just do the following :
