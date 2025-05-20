@@ -276,9 +276,6 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 > <code>py manage.py migrate</code>
 
-<br>
-
-
 ---
 
 <br>
