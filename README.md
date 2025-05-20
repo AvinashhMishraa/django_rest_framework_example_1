@@ -177,10 +177,12 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
+> <code>company_api/api/serializers.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; to expose the <code>id</code> of the companies in the JSON output, just add the following line in the <code>CompanySerializer()</code> method :
+> <pre>
+> compnay_id = serializers.ReadonlyField()
+> </pre>
 
-company_api/api/serializers.py                                  ----------> to expose the id of the companies, just add the following line in the CompanySerializer() :
-																			compnay_id = serializers.ReadonlyField()
-																			
+<br>																	
 																			
 Now what if we want to correct the spelling mistake of a column "compnay_id" in the Company TABLE?
 	STEP-1: Copy all the data from the field "compnay_id
