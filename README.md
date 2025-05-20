@@ -227,14 +227,14 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > > **Note** &nbsp;-&nbsp; In case you want to delete the models and re-run the migrations : <br>
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>py manage.py migrate api --fake</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code># py manage.py migrate api --fake-initial</code>  <br>
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now add all the records from the begining. <br>
-> > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However it's important to backup data before we drop a column or a table. 
+> > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However it's important to backup data before we drop a column or a table.
 
 <br>
 
 ---
 
-**Optional Implementation** &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; add a new column <code>company_id</code> to the <code>Company</code> model & <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;copy the primary key "id" to it such that it becomes <code>Bharat_{id}</code>
+**Optional Implementation** &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; add a new column <code>company_id</code> to the <code>Company</code> model, and <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;copy the primary key "id" to it such that it becomes <code>Bharat_{id}</code>
 
 
 ---
