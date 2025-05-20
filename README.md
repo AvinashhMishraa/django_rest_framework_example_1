@@ -117,8 +117,8 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 >
 > # Company view
 > class CompanyViewSet(viewsets.ModelViewSet):
-> 	queryset = Company.objects.all()
-> 	serializer_class = CompanySerializer
+>     queryset = Company.objects.all()
+>     serializer_class = CompanySerializer
 > </pre>
 
 <br>
