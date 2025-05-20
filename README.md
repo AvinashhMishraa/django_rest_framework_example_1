@@ -187,6 +187,15 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 ### <span style="background-color: #ffff00;">Introduction to the Python keyword arguments</span>
 
+<div style="border: 1px solid pink; padding: 10px; background-color: #fff6f6">
+    
+<font size="+1"><span style="color: red">➜</span>&nbsp;&nbsp;Positional arguments</font>                         <br>
+<font size="+1"><span style="color: red">➜</span>&nbsp;&nbsp;Keyword arguments</font>                            <br>
+<font size="+1"><span style="color: red">➜</span>&nbsp;&nbsp;Default argument</font>                             <br>
+<font size="+1"><span style="color: red">➜</span>&nbsp;&nbsp;Variable list of arguments (*args)</font>           <br>
+<font size="+1"><span style="color: red">➜</span>&nbsp;&nbsp;Variable list of keyword arguments (**args)</font>  <br>
+
+</div>
 
 
 --------------------------------------------------------------------------------------------------------------------------  
