@@ -237,11 +237,11 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∎ &nbsp; To open Django ORM &nbsp;&nbsp;&nbsp;&nbsp; ➜ &nbsp;&nbsp;&nbsp;&nbsp; <code>py ./manage.py shell</code>
 > >
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∎ &nbsp; To update the migration file name on DB Browser for SQLite :
-> > <pre>
-> > UPDATE django_migrations
-> > SET name = 'new_name'
-> > WHERE app = 'api' AND name = 'old_name';
-> > </pre>
+> > > <pre>
+> > > UPDATE django_migrations
+> > > SET name = 'new_name'
+> > > WHERE app = 'api' AND name = 'old_name';
+> > > </pre>
 
 <br>
 
