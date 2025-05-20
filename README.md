@@ -195,6 +195,21 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > > <code>py manage.py makemigrations</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp; <code>py manage.py makemigrations --name <migration_file_name></code> <br>
 > > <code>py manage.py migrate</code>
 
+<br>
+
+> To delete a model let say Company, 
+> - first comment out the Company() model code in the company_api/api/models.py file
+> - and then create a migration file using <code>py manage.py makemigrations</code> <br>
+use <code>py manage.py makemigrations --empty</code> in case you didn't comment out the code regarding <code>Company()</code> **model**
+> - and then in the migration file, just do the following :
+> <pre>
+> class Migration(migrations.Migration):
+>    operations = [
+>        migrations.DeleteModel(
+>            name='Company',
+>        ),
+>    ]
+> </pre>
 
 <br>
 
