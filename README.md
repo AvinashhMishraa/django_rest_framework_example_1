@@ -23,8 +23,8 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > from django.http import HttpResponse
 >
 > def home_page(request):
->	print("home page requested")
->	return HttpResponse("This is homepage")           # return HttpResponse("This is homepage")
+>	  print("home page requested")
+>	  return HttpResponse("This is homepage")           # return HttpResponse("This is homepage")
 > </pre>
 
 <br>
@@ -34,7 +34,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > from .views import home_page
 > 
 > urlpatterns = [
->	path('home', home_page)
+>	  path('home', home_page)
 > ]
 > </pre>
 
