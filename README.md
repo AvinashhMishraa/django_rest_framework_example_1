@@ -263,12 +263,12 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 >
 > class Migration(migrations.Migration):
 >      operations = [
->	    	  migrations.AddField(
->	       		model_name='company',
->	      		name='company_id',
->	       		field=models.CharField(blank=True, max_length=100, null=True),
->	    	  ),
->	    	  migrations.RunPython(copy_ids)
+>	      migrations.AddField(
+>	       	    model_name='company',
+>	      	    name='company_id',
+>	            field=models.CharField(blank=True, max_length=100, null=True),
+>	      ),
+>	      migrations.RunPython(copy_ids)
 >    ]
 > </pre>
 
