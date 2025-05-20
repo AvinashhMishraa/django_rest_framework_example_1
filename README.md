@@ -163,7 +163,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <br>
 
 > <code>py ./manage.py makemigrations</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; to make migrations for models <br>
-> <code>py ./manage.py migrate</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; to migrate
+> <code>py ./manage.py migrate</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; to migrate
 
 <br>
 
