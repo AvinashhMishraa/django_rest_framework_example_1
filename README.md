@@ -134,7 +134,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > router.register(r'companies', CompanyViewSet)
 >
 > urlpatterns = [
->		path('', include(router.urls))
+>	  path('', include(router.urls))
 > ]
 </pre>
 
