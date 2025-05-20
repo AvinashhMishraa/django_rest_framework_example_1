@@ -41,7 +41,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <br>
 
 >
-> Now open the home page of the app  &nbsp;&nbsp;-----------------------&nbsp;&nbsp; <code>http://localhost:8000/home/</code>
+> Now open the home page of the app &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code>http://localhost:8000/home/</code>
 >
 
 <br>
@@ -71,7 +71,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 																
 <br>
 
-> <code>company_api/api/model.py</code>  &nbsp;&nbsp;------------------&nbsp;&nbsp; create a **model** called <code>Company</code>
+> <code>company_api/api/model.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; create a **model** called <code>Company</code>
 > <pre>
 > from django.db import models
 >
@@ -94,7 +94,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-> <code>company_api/api/serializers.py</code> &nbsp;&nbsp;-----------------&nbsp;&nbsp; create a **Company Serializer** <code>CompanySerializer()</code>
+> <code>company_api/api/serializers.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; create a **Company Serializer** <code>CompanySerializer()</code>
 > <pre>
 > from rest_framework import serializers
 > from api.models import Company
@@ -109,7 +109,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-> <code>company_api/api/views.py</code>  &nbsp;&nbsp;-----------------&nbsp;&nbsp; create a **Company view**  called <code>CompanyViewSet()</code>
+> <code>company_api/api/views.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; create a **Company view**  called <code>CompanyViewSet()</code>
 > <pre>
 > from django.shortcuts import render
 > from rest_framework import viewsets
@@ -162,8 +162,8 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-> <code>py ./manage.py makemigrations</code> &nbsp;&nbsp;----------&nbsp;&nbsp; to make migrations for models <br>
-> <code>py ./manage.py migrate</code> &nbsp;&nbsp;------------------&nbsp;&nbsp; to migrate
+> <code>py ./manage.py makemigrations</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; to make migrations for models <br>
+> <code>py ./manage.py migrate</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; to migrate
 
 <br>
 
