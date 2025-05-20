@@ -167,7 +167,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-> <code>py ./manage.py runserver</code> &nbsp;&nbsp;----------&nbsp;&nbsp; http://localhost:8000/api/v1/ &nbsp;&nbsp;&nbsp;&nbsp;&&nbsp;&nbsp;&nbsp;&nbsp;           http://localhost:8000/api/v1/companies/
+> <code>py ./manage.py runserver</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; http://localhost:8000/api/v1/ &nbsp;&nbsp;&nbsp;&nbsp;&&nbsp;&nbsp;&nbsp;&nbsp;           http://localhost:8000/api/v1/companies/
 
 <br>
 
