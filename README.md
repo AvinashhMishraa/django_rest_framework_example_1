@@ -184,21 +184,23 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>																	
 
+How to add a new column <code>ceo</code> to an already existing model </code>Company</code> ?
 
-### <span style="background-color: #ffff00;">Introduction to the Python keyword arguments</span>
+company_api/api/models.py
+<pre>
+class Company(models.Model):
+	ceo = models.CharField(max_length=100, null=True, blank=True)        # new column
+</pre>
 
-<div style="border: 1px solid pink; padding: 10px; background-color: #fff6f6">
-    
-<font size="+1"><span style="color: red">➜</span>&nbsp;&nbsp;Positional arguments</font>                         <br>
-<font size="+1"><span style="color: red">➜</span>&nbsp;&nbsp;Keyword arguments</font>                            <br>
-<font size="+1"><span style="color: red">➜</span>&nbsp;&nbsp;Default argument</font>                             <br>
-<font size="+1"><span style="color: red">➜</span>&nbsp;&nbsp;Variable list of arguments (*args)</font>           <br>
-<font size="+1"><span style="color: red">➜</span>&nbsp;&nbsp;Variable list of keyword arguments (**args)</font>  <br>
-
-</div>
+<code>py manage.py makemigrations</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# <code>py manage.py makemigrations --name <migration_file_name></code> <br>
+<code>py manage.py migrate</code>
 
 
---------------------------------------------------------------------------------------------------------------------------  
+<br>
+
+
+<br>
+
 Now what if we want to correct the spelling mistake of a column "compnay_id" in the Company TABLE?
 	STEP-1: Copy all the data from the field "compnay_id
 	STEP-2: Create a new migration to add a new column called "company_id"
