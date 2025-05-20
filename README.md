@@ -184,7 +184,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-> To see a **table structure** & it's **definition**, use the following query in the DB browser for SQLite :
+> To see a **table structure** & it's **definition**, use the following query in the DB browser for **SQLite** :
 >
 > <pre>
 > PRAGMA table_info('api_company');
