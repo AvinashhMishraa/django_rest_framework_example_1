@@ -231,6 +231,8 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; However it's important to backup data before we drop a column or a table.
 > >
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∎ &nbsp; To generate an empty migration &nbsp;&nbsp;&nbsp;&nbsp; ➜ &nbsp;&nbsp;&nbsp;&nbsp; <code>py manage.py makemigrations api --empty</code>
+> >
+> > To show all migrations &nbsp;&nbsp;&nbsp;&nbsp; ➜ &nbsp;&nbsp;&nbsp;&nbsp; <code>py ./manage.py showmigrations</code>
 
 <br>
 
