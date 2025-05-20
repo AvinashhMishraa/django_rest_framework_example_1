@@ -225,18 +225,18 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > <br>
 >
 > > **Note &nbsp;:** <br>
-> > &nbsp;&nbsp; ∎ &nbsp; In case you want to delete the models and re-run the migrations : <br>
+> > ∎ &nbsp; In case you want to delete the models and re-run the migrations : <br>
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>py manage.py migrate api --fake</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>py manage.py migrate api --fake-initial</code>  <br>
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Now add all the records from the begining. <br>
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; However it's important to backup data before we drop a column or a table.
 > >
-> > &nbsp;&nbsp; ∎ &nbsp; To generate an empty migration &nbsp;&nbsp;&nbsp;&nbsp; ➜ &nbsp;&nbsp;&nbsp;&nbsp; <code>py manage.py makemigrations api --empty</code>
+> > ∎ &nbsp; To generate an empty migration &nbsp;&nbsp;&nbsp;&nbsp; ➜ &nbsp;&nbsp;&nbsp;&nbsp; <code>py manage.py makemigrations api --empty</code>
 > >
-> > &nbsp;&nbsp; ∎ &nbsp; To show all migrations &nbsp;&nbsp;&nbsp;&nbsp; ➜ &nbsp;&nbsp;&nbsp;&nbsp; <code>py ./manage.py showmigrations</code>
+> > ∎ &nbsp; To show all migrations &nbsp;&nbsp;&nbsp;&nbsp; ➜ &nbsp;&nbsp;&nbsp;&nbsp; <code>py ./manage.py showmigrations</code>
 > > 
-> > &nbsp;&nbsp; ∎ &nbsp; To open Django ORM &nbsp;&nbsp;&nbsp;&nbsp; ➜ &nbsp;&nbsp;&nbsp;&nbsp; <code>py ./manage.py shell</code>
+> > ∎ &nbsp; To open Django ORM &nbsp;&nbsp;&nbsp;&nbsp; ➜ &nbsp;&nbsp;&nbsp;&nbsp; <code>py ./manage.py shell</code>
 > >
-> > &nbsp;&nbsp; ∎ &nbsp; To update the migration file name on DB Browser for SQLite :
+> > ∎ &nbsp; To update the migration file name on DB Browser for SQLite :
 > > <pre>
 > > UPDATE django_migrations
 > > SET name = 'new_name'
