@@ -184,38 +184,39 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>																	
 
-> How to add a new column <code>ceo</code> to an already existing model <code>Company</code> ?
+⭐**Migrations**
+> > How to add a new column <code>ceo</code> to an already existing model <code>Company</code> ?
+> >
+> > <code>company_api/api/models.py</code>
+> > <pre>
+> > class Company(models.Model):
+> >		ceo = models.CharField(max_length=100, null=True, blank=True)              # new column
+> > </pre>
+> >
+> > > <code>py manage.py makemigrations</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp; <code>py manage.py makemigrations --name <migration_file_name></code> <br>
+> > > <code>py manage.py migrate</code>
 >
-> <code>company_api/api/models.py</code>
-> <pre>
-> class Company(models.Model):
->		ceo = models.CharField(max_length=100, null=True, blank=True)              # new column
-> </pre>
+> <br>
 >
-> > <code>py manage.py makemigrations</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp; <code>py manage.py makemigrations --name <migration_file_name></code> <br>
-> > <code>py manage.py migrate</code>
-
-<br>
-
-> To delete a model let say <code>Company</code> : 
-> - First comment out the <code>Company()</code> model code in the <code>company_api/api/models.py</code> file
-> - Then create a migration file using <code>py manage.py makemigrations</code> <br>
-You can use <code>py manage.py makemigrations --empty</code> in case you didn't comment out the code regarding <code>Company()</code> **model**
-> - And finally in the migration file, just do the following :
-> <pre>
-> class Migration(migrations.Migration):
->    operations = [
->        migrations.DeleteModel(
->            name='Company',
->        ),
->    ]
-> </pre>
-
-<br>
-
-> **Note** &nbsp;-&nbsp; In case you want to delete the models and re-run the migrations : <br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>py manage.py migrate api --fake</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code># py manage.py migrate api --fake-initial</code>  <br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now add all the records from the begining.
+> > To delete a model let say <code>Company</code> : 
+> > - First comment out the <code>Company()</code> model code in the <code>company_api/api/models.py</code> file
+> > - Then create a migration file using <code>py manage.py makemigrations</code> <br>
+> You can use <code>py manage.py makemigrations --empty</code> in case you didn't comment out the code regarding <code>Company()</code> **model**
+> > - And finally in the migration file, just do the following :
+> > <pre>
+> > class Migration(migrations.Migration):
+> >    operations = [
+> >        migrations.DeleteModel(
+> >            name='Company',
+> >        ),
+> >    ]
+> > </pre>
+>
+> <br>
+>
+> > **Note** &nbsp;-&nbsp; In case you want to delete the models and re-run the migrations : <br>
+> > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>py manage.py migrate api --fake</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code># py manage.py migrate api --fake-initial</code>  <br>
+> > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now add all the records from the begining.
 
 <br>
 
