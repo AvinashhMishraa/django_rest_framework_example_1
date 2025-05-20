@@ -236,6 +236,48 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 **Optional Implementation** &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; add a new column <code>company_id</code> to the <code>Company</code> model, and <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;copy the primary key <code>id</code> to it such that it becomes <code>Bharat_{id}</code>
 
+<br>
+
+> <code>company_api/api/models.py</code>
+> <pre>
+> class Company(models.Model):
+>    company_id = models.CharField(max_length=100, null=True, blank=True)              # new column
+> </pre>
+
+<br>
+
+> <code>py manage.py makemigrations --name add_company_id_to_company_model_and_populate_it</code> <br>
+
+<br>
+
+> Open the migration file created &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; <code>XXXX_add_company_id_to_company_model_and_populate_it.py</code> : <br>
+>
+> <pre>
+> from django.db import migrations
+>
+> def copy_ids(apps, schema_editor):
+>    Company = apps.get_model('api', 'Company')
+>    for company in Company.objects.all():
+>        company.company_id = "Bharat_" + company.id               # copy id to company_id
+>        company.save()
+>
+> class Migration(migrations.Migration):
+>    operations = [
+>		migrations.AddField(
+>	       model_name='company',
+>	       name='company_id',
+>	       field=models.CharField(blank=True, max_length=100, null=True),
+>	    ),
+>		migrations.RunPython(copy_ids)
+>    ]
+> </pre>
+
+<br>
+
+> <code>py manage.py migrate</code>
+
+<br>
+
 
 ---
 
