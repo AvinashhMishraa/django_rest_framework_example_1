@@ -171,8 +171,8 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-> ∎ &nbsp;Now create a couple of companies &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; http://localhost:8000/api/v1/companies/?format=json <br>
-> ∎ &nbsp;Also check if tables created are reflected in the DB browser for **SQLite** &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; http://localhost:8000/api/v1/companies <br>
+> ∎ &nbsp;Now create a couple of companies &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; http://localhost:8000/api/v1/companies/ <br>
+> ∎ &nbsp;Also check if tables created are being reflected in the DB browser for **SQLite** <br>
 > ∎ &nbsp;Install **Postman** app and play with it.
 
 <br>
