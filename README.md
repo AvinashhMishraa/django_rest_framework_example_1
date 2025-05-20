@@ -171,9 +171,11 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-Create a couple of companies using POST and then GET them       ----------> http://localhost:8000/api/v1/companies/?format=json
-Also check if tables are created in the DB browser for SQLite               http://localhost:8000/api/v1/companies
-Also play with Postman now
+> Now create a couple of companies using <code>POST</code> and then <code>GET</code> them &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; http://localhost:8000/api/v1/companies/?format=json <br>
+> Also check if tables created are reflected in the DB browser for **SQLite** &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; http://localhost:8000/api/v1/companies <br>
+> Install **Postman** app and play with it.
+
+<br>
 
 
 company_api/api/serializers.py                                  ----------> to expose the id of the companies, just add the following line in the CompanySerializer() :
