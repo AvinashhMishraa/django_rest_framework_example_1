@@ -196,13 +196,13 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > > <code>py manage.py makemigrations</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp; <code>py manage.py makemigrations --name <migration_file_name></code> <br>
 > > <pre>
 > > class Migration(migrations.Migration):
-> > 	    operations = [
+> > 	   operations = [
 > >		 migrations.AddField(
 > >		      model_name='company',
 > >		      name='ceo',
 > >		      field=models.CharField(blank=True, max_length=100, null=True),
 > >		 ),
-> >	    ]
+> >	   ]
 > > </pre>
 > > <code>py manage.py migrate</code>
 >
