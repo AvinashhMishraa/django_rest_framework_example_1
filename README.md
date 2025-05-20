@@ -176,9 +176,10 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-> <code>company_api/api/serializers.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; to expose the <code>id</code> of the companies in the JSON output, just add the following line in the <code>CompanySerializer()</code> method :
+> <code>company_api/api/serializers.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; to expose the <code>id</code> of the companies in the JSON output, just add the following line :
 > <pre>
-> compnay_id = serializers.ReadonlyField()
+> class CompanySerializer(serializers.HyperlinkedModelSerializer):
+> 			id = serializers.ReadOnlyField()
 > </pre>
 
 <br>																	
