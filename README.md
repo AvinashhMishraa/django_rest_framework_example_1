@@ -165,9 +165,11 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > <code>py ./manage.py makemigrations</code> &nbsp;&nbsp;----------&nbsp;&nbsp; to make migrations for models <br>
 > <code>py ./manage.py migrate</code> &nbsp;&nbsp;------------------&nbsp;&nbsp; to migrate
 
+<br>
 
-py ./manage.py runserver                                        ----------> http://localhost:8000/api/v1/           &           http://localhost:8000/api/v1/companies/
+<code>py ./manage.py runserver</code> &nbsp;&nbsp;----------&nbsp;&nbsp; http://localhost:8000/api/v1/ &nbsp;&nbsp;&nbsp;&           http://localhost:8000/api/v1/companies/
 
+<br>
 
 Create a couple of companies using POST and then GET them       ----------> http://localhost:8000/api/v1/companies/?format=json
 Also check if tables are created in the DB browser for SQLite               http://localhost:8000/api/v1/companies
