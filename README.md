@@ -183,7 +183,13 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > </pre>
 
 <br>																	
-																			
+
+
+### <span style="background-color: yellow;">Introduction to the Python keyword arguments</span>
+
+
+
+--------------------------------------------------------------------------------------------------------------------------  
 Now what if we want to correct the spelling mistake of a column "compnay_id" in the Company TABLE?
 	STEP-1: Copy all the data from the field "compnay_id
 	STEP-2: Create a new migration to add a new column called "company_id"
