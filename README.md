@@ -198,9 +198,9 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > > class Migration(migrations.Migration):
 > >	    operations = [
 > >		 migrations.AddField(
-> >			model_name='company',
-> >			name='ceo',
-> >			field=models.CharField(blank=True, max_length=100, null=True),
+> >		      model_name='company',
+> >		      name='ceo',
+> >		      field=models.CharField(blank=True, max_length=100, null=True),
 > >		 ),
 > >	    ]
 > > </pre>
