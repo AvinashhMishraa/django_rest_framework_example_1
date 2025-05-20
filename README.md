@@ -230,7 +230,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Now add all the records from the begining. <br>
 > > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; However it's important to backup data before we drop a column or a table.
 > >
-> >  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∎ &nbsp; <code>py manage.py makemigrations api --empty</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>python manage.py makemigrations app_name --empty</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # to generate an empty migration
+> >  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∎ &nbsp; <code>py manage.py makemigrations api --empty</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # to generate an empty migration.
 
 <br>
 
