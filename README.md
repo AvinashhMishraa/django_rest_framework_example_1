@@ -56,8 +56,8 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > <code>company_api/company_drf_api/settings.py</code>
 > <pre>
 > INSTALLED_APPS = [
->	...,
->	'rest_framework',
+>	  ...,
+>	  'rest_framework',
 > ]
 > </pre>
 
