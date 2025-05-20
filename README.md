@@ -233,10 +233,13 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 ---
 
-<br><br>
+**Optional Implementation** &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; add a new column "company_id" to the Company model & <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;copy the primary key "id" to it such that it becomes <code>Bharat_{id}</code>
 
 
 ---
+
+<br>
 
 Now what if we want to correct the spelling mistake of a column "compnay_id" in the Company TABLE?
 	STEP-1: Copy all the data from the field "compnay_id
