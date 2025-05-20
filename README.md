@@ -204,7 +204,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > > >		),
 > > >	]
 > > > </pre>
-> > > <code>py manage.py migrate</code>
+> >   <code>py manage.py migrate</code>
 >
 > <br>
 >
