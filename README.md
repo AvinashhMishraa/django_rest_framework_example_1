@@ -312,13 +312,13 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > <pre>
 > class CompanySerializer(serializers.HyperlinkedModelSerializer):
 >
->    	  summary = serializers.SerializerMethodField()
+>    	summary = serializers.SerializerMethodField()
 >
->    	  class Meta:
+>    	class Meta:
 >        	model = Company
 >        	fields = ["url", "id", "name", "location", "about", "type", "added_date", "active", "summary"]
 > 
->    	  def get_summary(self, obj):         
+>    	def get_summary(self, obj):         
 >        	return f"{obj.name} is a {obj.location} based {obj.type} company"
 > </pre>
 		
