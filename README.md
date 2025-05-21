@@ -322,26 +322,9 @@ class CompanySerializer(serializers.HyperlinkedModelSerializer):
 		
 ---------------------------------------------------------------------------------------------------------------------------------
 
-How to add a column to a model in Django Rest Framework ?
 
-class Company(models.Model):
-	ceo = models.CharField(max_length=100, null=True, blank=True)        # new column
 
-py manage.py makemigrations
-
-py manage.py migrate                           --->  I am getting the error while trying to add "ceo" column to the company model :
-
-django.db.utils.OperationalError: table "api_company" already exists     ------     likely because the migration history and actual database schema are out of sync
-                                                                                    This happens because :
-																					    - You deleted migration files manually.
-																					    - You dropped or recreated the database table outside of Django.
-																					    - You’re starting fresh but the migration state is corrupted.
-
-py manage.py migrate api --fake-initial         # it will delete the model along with it's migrations             <py manage.py migrate api --fake>
-
-Now add all the records from the begining
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 
 How to create a Custom URL ? 
 
