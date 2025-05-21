@@ -324,6 +324,33 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 		
 <br>
 
+> Now let's create another model called <code>Employee</code> such that a **company** can have many **employees**. So, it's a **One-to-Many** relationship.
+> <pre>
+> # Employee model
+> class Employee(models.Model):
+>     name = models.CharField(max_length=100)
+>     email = models.CharField(max_length=50)
+>     address = models.CharField(max_length=200)
+>     phone = models.CharField(max_length=10)
+>     about = models.TextField()
+>     position = models.CharField(max_length=50, 
+>                                 choices=(
+>                                     ('Manager', 'MGR'),
+>                                     ('Software Developer', 'SD'),
+>                                     ('Project Leader', 'PL')
+>                                 ))
+>     company = models.ForeignKey(Company, on_delete=models.CASCADE)                  # company_id = Foreign Key
+> </pre>
+> 
+> <code>py .manage.py makemigrations --name create_employee_model</code>
+>
+> <code>py manage.py migrate</code>
+
+
+
+
+<br>
+
 How to create a Custom URL ? 
 
 http://localhost:8000/api/v1/companies/      has all the APIs for companies
