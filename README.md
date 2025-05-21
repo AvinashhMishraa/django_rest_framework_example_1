@@ -386,59 +386,59 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-<code>http://localhost:8000/api/v1/companies/</code> &nbsp;&nbsp; has all the APIs for companies <br>
-<code>http://localhost:8000/api/v1/employees/</code> &nbsp;&nbsp; has all the APIs for employees
-
-So now that you have seen how to create **root URLs**, let's see how to create a **custom URL** :
-
-**Custom URL**
-
-<code>http://localhost:8000/api/v1/companies/1/employees</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; All employee of company 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Page not found (404) <br>
-<code>http://localhost:8000/api/v1/companies/{company_id}/employees</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; how to get all employees of a particular company ?
-
-<code>company_api/api/views.py</code>
-<pre>
-> from rest_framework.decorators import action
-> from rest_framework.response import Response
->						
-> @action(detail=True, methods=['get'])
-> def employees(self, request, pk=None):
->    # print('get employess of company ', pk)        	    	# to check if the method is called by http://localhost:8000/api/v1/companies/1/employees
->    company = Company.objects.get(pk=pk)
->    emps = Employee.objects.filter(company=company)
->    emps_serializer = EmployeeSerializer(emps, many=True, context={'request' : request})
->    return Response(emps_serializer.data)
-</pre>
-
-<br>
-
-Suppose you have created 3 companies with id = 1, 2, 3 respectively.  <br>
-And if you want, you may create some employees too.                   <br>
-Now let's check the following APIs :                                  <br>
-<code>http://localhost:8000/api/v1/companies/1/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 1 because it exists
-<code>http://localhost:8000/api/v1/companies/2/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 2 because it exists
-<code>http://localhost:8000/api/v1/companies/3/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 3 because it exists
-<code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does not work for company 4 because it may not exist
-
-<br>
-
-> So put it in **Try-Exception** block like below :
+> <code>http://localhost:8000/api/v1/companies/</code> &nbsp;&nbsp; has all the APIs for companies <br>
+> <code>http://localhost:8000/api/v1/employees/</code> &nbsp;&nbsp; has all the APIs for employees
+>
+> So now that you have seen how to create **root URLs**, let's see how to create a **custom URL** :
+>
+> ⭐ **Custom URL**
+>
+> <code>http://localhost:8000/api/v1/companies/1/employees</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; All employee of company 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Page not found (404) <br>
+> <code>http://localhost:8000/api/v1/companies/{company_id}/employees</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; how to get all employees of a particular company ?
+>
+> <code>company_api/api/views.py</code>
 > <pre>
-> def employees(self, request, pk=None):
->    try:
->       company = Company.objects.get(pk=pk)
-> 		emps = Employee.objects.filter(company=company)
-> 		emps_serializer = EmployeeSerializer(emps, many=True, context={'request' : request})
-> 		return Response(emps_serializer.data)
->    except Exception as e:
-> 		print(e)
-> 		return Response({
-> 			'message' : 'Company might not exist !! ERROR'
-> 		})
+> > from rest_framework.decorators import action
+> > from rest_framework.response import Response
+> >						
+> > @action(detail=True, methods=['get'])
+> > def employees(self, request, pk=None):
+> >    # print('get employess of company ', pk)        	    	# to check if the method is called by http://localhost:8000/api/v1/companies/1/employees
+> >    company = Company.objects.get(pk=pk)
+> >    emps = Employee.objects.filter(company=company)
+> >    emps_serializer = EmployeeSerializer(emps, many=True, context={'request' : request})
+> >    return Response(emps_serializer.data)
 > </pre>
-
-<code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp; now works and does not throw error for company 4 even when it does not exist <br>
-<code>http://localhost:8000/api/v1/companies/5/employees/</code> &nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp; now works even there is no company 5
+>
+> <br>
+>
+> Suppose you have created 3 companies with id = 1, 2, 3 respectively.  <br>
+> And if you want, you may create some employees too.                   <br>
+> Now let's check the following APIs :                                  <br>
+> <code>http://localhost:8000/api/v1/companies/1/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 1 because it exists
+> <code>http://localhost:8000/api/v1/companies/2/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 2 because it exists
+> <code>http://localhost:8000/api/v1/companies/3/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 3 because it exists
+> <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does not work for company 4 because it may not exist
+>
+><br>
+>
+> > So put it in **Try-Exception** block like below :
+> > <pre>
+> > def employees(self, request, pk=None):
+> >    try:
+> >       company = Company.objects.get(pk=pk)
+> > 		emps = Employee.objects.filter(company=company)
+> > 		emps_serializer = EmployeeSerializer(emps, many=True, context={'request' : request})
+> > 		return Response(emps_serializer.data)
+> >    except Exception as e:
+> > 		print(e)
+> > 		return Response({
+> > 			'message' : 'Company might not exist !! ERROR'
+> > 		})
+> > </pre>
+>
+> <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp; now works and does not throw error for company 4 even when it does not exist <br>
+> <code>http://localhost:8000/api/v1/companies/5/employees/</code> &nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp; now works even there is no company 5
 
 <br>
 
