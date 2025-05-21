@@ -324,7 +324,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 		
 <br>
 
-> Now let's create another model called <code>Employee</code> such that a **company** can have many **employees**. So, it's a **One-to-Many** relationship.
+> > Now let's create another model called <code>Employee</code> such that a **company** can have many **employees**. So, it's a **One-to-Many** relationship.
 > <pre>
 > # Employee model
 > class Employee(models.Model):
