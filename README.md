@@ -434,8 +434,8 @@ Now let's check the following APIs :                                  <br>
 > 		})
 > </pre>
 
-<code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works and does not throw error for company 4 even when it does not exist
-<code>http://localhost:8000/api/v1/companies/5/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works even there is no company 5
+<code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp; now works and does not throw error for company 4 even when it does not exist <br>
+<code>http://localhost:8000/api/v1/companies/5/employees/</code> &nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp; now works even there is no company 5
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
