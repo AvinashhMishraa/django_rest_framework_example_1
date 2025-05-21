@@ -308,55 +308,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-Now what if we want to correct the spelling mistake of a column "compnay_id" in the Company TABLE?
-	STEP-1: Copy all the data from the field "compnay_id
-	STEP-2: Create a new migration to add a new column called "company_id"
-	STEP-3. Remove the column "compnay_id" by making a new migration
-	
-	
-company_api/api/model.py                                         ----------> add a new field in the Company model like the follwoing :
-										                                     company_id = models.IntegerField(null=True)
-
-py manage.py makemigrations
-py manage.py migrate
-
-py manage.py makemigrations api --empty                          ----------> python manage.py makemigrations your_app_name --empty        # to generate an empty migration
-
-python manage.py makemigrations --name add_user_profile          ----------> to give a name to a migration file
-
-																			
-py ./manage.py showmigrations                                    ----------> to show all migrations
-
-
-UPDATE django_migrations
-SET name = '0001_create_company_model'
-WHERE app = 'api' AND name = '0001_initial';
-
-
-py ./manage.py shell                                              ---------> to open Django ORM
-
-from django.db import connection
-with connection.cursor() as cursor:
-    cursor.execute("""
-        UPDATE django_migrations
-        SET name = '0001_create_company_model'
-        WHERE app = 'api' AND name = '0001_initial';
-    """)
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-PRAGMA table_info('api_company');
-
-SELECT sql 
-FROM sqlite_master 
-WHERE type = 'table' AND name = 'api_company';
-
-
-Views are of 2 types :
-	1) Function based view
-	2) Class based view
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
 
 To add an additional field to ModelSerializer without adding it in the Model :
 
@@ -368,7 +320,7 @@ class CompanySerializer(serializers.HyperlinkedModelSerializer):
     def get_summary(self, obj):         
         return f"{obj.name} is a {obj.location} based {obj.type} company"
 		
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
 
 How to add a column to a model in Django Rest Framework ?
 
