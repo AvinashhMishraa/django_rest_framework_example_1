@@ -310,21 +310,20 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-To add an additional field to ModelSerializer without adding it in the Model :
+<br>
 
-class CompanySerializer(serializers.HyperlinkedModelSerializer):
-    summary = serializers.SerializerMethodField()
-    class Meta:
-        model = Company
-        fields = ["url", "id", "name", "location", "about", "type", "added_date", "active", "summary"]
-    def get_summary(self, obj):         
-        return f"{obj.name} is a {obj.location} based {obj.type} company"
+> **Custom Field** &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; How to add an additional field to a ModelSerializer _without actually adding it in the Model_ ?
+> <pre>
+> class CompanySerializer(serializers.HyperlinkedModelSerializer):
+>    summary = serializers.SerializerMethodField()
+>    class Meta:
+>        model = Company
+>        fields = ["url", "id", "name", "location", "about", "type", "added_date", "active", "summary"]
+>    def get_summary(self, obj):         
+>        return f"{obj.name} is a {obj.location} based {obj.type} company"
+> </pre>
 		
----------------------------------------------------------------------------------------------------------------------------------
-
-
-
----------------------------------------------------------------------------------------------------------------------------------
+<br>
 
 How to create a Custom URL ? 
 
