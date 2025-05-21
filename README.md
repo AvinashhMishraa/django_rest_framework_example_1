@@ -346,7 +346,45 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 >
 > <code>py manage.py migrate</code>
 
+<br>
 
+> <code>company_api/api/serializers.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; create a **Employee Serializer** <code>EmployeeSerializer()</code>
+> <pre>
+> from api.models import Employee
+>
+> # Employee serializer
+> class EmployeeSerializer(serializers.HyperlinkedModelSerializer):
+>
+>    id = serializers.ReadOnlyField()
+>
+>    class Meta:
+>        model = Employee
+>        fields = "__all__"
+> </pre>																	 
+
+<br>
+
+> <code>company_api/api/views.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; create a **Company view**  called <code>CompanyViewSet()</code>
+> <pre>
+> from api.models import Employee
+> from api.serializers import EmployeeSerializer
+>
+> # Employee view
+> class EmployeeViewSet(viewsets.ModelViewSet):
+>    queryset = Employee.objects.all()
+>    serializer_class = EmployeeSerializer
+> </pre>
+
+<br>
+
+> <code>company_api/api/urls.py</code> 
+> <pre>
+> from api.views import EmployeeViewSet
+>
+> router.register(r'employees', EmployeeViewSet)
+</pre>
+
+<br>
 
 
 <br>
