@@ -419,7 +419,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > <code>http://localhost:8000/api/v1/companies/3/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 3 because it exists
 > <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does not work for company 4 because it may not exist <br>
 >
-> > So put it in **Try-Exception** block like below :
+> > So put it in a **Try-Exception** block like below :
 > > <pre>
 > > def employees(self, request, pk=None):
 > >    try:
