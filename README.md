@@ -451,7 +451,8 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > >		]
 > >	}
 > > </pre>
->
+> <br>
+> 
 > > Now go to both the root urls and you will see there is no form to create a record :
 > > <pre>
 > >	{
