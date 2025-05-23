@@ -397,7 +397,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > <code>http://localhost:8000/api/v1/companies/1/employees</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; All employee of company 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Page not found (404) <br>
 > <code>http://localhost:8000/api/v1/companies/{company_id}/employees</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; how to get all employees of a particular company ?
 > 
-> <br>
+>
 > > <code>company_api/api/views.py</code>
 > > <pre>
 > > from rest_framework.decorators import action
