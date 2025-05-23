@@ -395,7 +395,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > ⭐ **Custom URL**
 > 
 > <code>http://localhost:8000/api/v1/companies/1/employees</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; All employee of company 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Page not found (404) <br>
-> <code>http://localhost:8000/api/v1/companies/{company_id}/employees</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; how to get all employees of a particular company ?  <br><br>
+> <code>http://localhost:8000/api/v1/companies/{company_id}/employees</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; how to get all employees of a particular company ?  <br>
 >
 > > <code>company_api/api/views.py</code>
 > > <pre>
@@ -417,8 +417,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > <code>http://localhost:8000/api/v1/companies/1/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 1 because it exists
 > <code>http://localhost:8000/api/v1/companies/2/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 2 because it exists
 > <code>http://localhost:8000/api/v1/companies/3/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 3 because it exists
-> <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does not work for company 4 because it may not exist
-> <br><br>
+> <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does not work for company 4 because it may not exist <br>
 >
 > > So put it in **Try-Exception** block like below :
 > > <pre>
@@ -433,9 +432,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > > 		return Response({
 > > 			'message' : 'Company might not exist !! ERROR'
 > > 		})
-> > </pre>
-> <br>
->
+> > </pre> <br>
 >
 > <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;➜&nbsp; does not throw error for company 4 even if it does not exist <br>
 > <code>http://localhost:8000/api/v1/companies/5/employees/</code> &nbsp;➜&nbsp; now works even when there is no company 5
