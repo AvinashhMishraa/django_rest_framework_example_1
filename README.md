@@ -387,8 +387,9 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <br>
 
 <code>http://localhost:8000/api/v1/companies/</code> &nbsp;&nbsp; has all the APIs for companies <br><code>http://localhost:8000/api/v1/employees/</code> &nbsp;&nbsp; has all the APIs for employees
->
-> So now that you have seen how to create **root URLs**, let's see how to create a **custom URL** :
+
+So now that you have seen how to create **root URLs**, let's see how to create a **custom URL** :
+
 > <br><br>
 > 
 > ⭐ **Custom URL**
