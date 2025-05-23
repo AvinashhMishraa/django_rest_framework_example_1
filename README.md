@@ -403,7 +403,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > >						
 > > @action(detail=True, methods=['get'])
 > > def employees(self, request, pk=None):
-> >    # print('get employess of company ', pk)        	    	# to check if the method is called by http://localhost:8000/api/v1/companies/1/employees
+> >    # print('get employess of company ', pk)        	  # to check if this method is called by http://localhost:8000/api/v1/companies/1/employees
 > >    company = Company.objects.get(pk=pk)
 > >    emps = Employee.objects.filter(company=company)
 > >    emps_serializer = EmployeeSerializer(emps, many=True, context={'request' : request})
