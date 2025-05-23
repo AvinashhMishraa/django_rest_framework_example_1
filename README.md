@@ -439,7 +439,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 
 <br>
 
-> > Now if you want to allow only the <code>READ</code> operation on the browser so that the <code>CREATE</code>, <code>UPDATE</code> & <code>DELETE</code> operations can only be done through the **Application Backend**, you will have to **disable the permissions** accordingly for unauthenticated users like following :
+> > Now if you want to allow only the <code>READ</code> operation on a browser so that the <code>CREATE</code>, <code>UPDATE</code> & <code>DELETE</code> operations can only be done through the **Application Backend**, you will have to **disable the permissions** accordingly for unauthenticated users like following :
 > >
 > > <code>company_api/company_drf_api/settings.py</code>
 > > <pre>
