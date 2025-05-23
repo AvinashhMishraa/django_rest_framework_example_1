@@ -413,6 +413,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > </pre>
 > <br>
 > 
+>
 > Suppose you have created 3 companies with id = 1, 2, 3 respectively.  <br>
 > And if you want, you may create some employees too.                   <br>
 > Now let's check the following APIs :                                  <br>
@@ -421,6 +422,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > <code>http://localhost:8000/api/v1/companies/3/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 3 because it exists
 > <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does not work for company 4 because it may not exist
 > <br>
+>
 >
 > > So put it in **Try-Exception** block like below :
 > > <pre>
@@ -437,6 +439,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > > 		})
 > > </pre>
 > <br>
+>
 >
 > <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;➜&nbsp; does not throw error for company 4 even if it does not exist <br>
 > <code>http://localhost:8000/api/v1/companies/5/employees/</code> &nbsp;➜&nbsp; now works even when there is no company 5
