@@ -409,7 +409,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > >    emps = Employee.objects.filter(company=company)
 > >    emps_serializer = EmployeeSerializer(emps, many=True, context={'request' : request})
 > >    return Response(emps_serializer.data)
-> </pre> <br><br>
+> </pre> <br>
 >
 > Suppose you have created 3 companies with id = 1, 2, 3 respectively.  <br>
 > And if you want, you may create some employees too.                   <br>
