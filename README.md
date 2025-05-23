@@ -409,8 +409,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > >    emps = Employee.objects.filter(company=company)
 > >    emps_serializer = EmployeeSerializer(emps, many=True, context={'request' : request})
 > >    return Response(emps_serializer.data)
-> </pre>
-> <br><br>
+> </pre> <br><br>
 >
 > Suppose you have created 3 companies with id = 1, 2, 3 respectively.  <br>
 > And if you want, you may create some employees too.                   <br>
