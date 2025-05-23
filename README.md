@@ -439,47 +439,44 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 
 <br>
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+> > Now if you want to allow only the <code>READ</code> operation on the browser so that the <code>CREATE</code>, <code>UPDATE</code> & <code>DELETE</code> operations can only be done through the **Application Backend**, you will have to **disable the permissions** accordingly for unauthenticated users like following :
+> >
+> > <code>company_api/company_drf_api/settings.py</code>
+> > <pre>
+> >	REST_FRAMEWORK = {
+> >		# Use Django's standard `django.contrib.auth` permissions,
+> >		# or allow read-only access for unauthenticated users.
+> >		'DEFAULT_PERMISSION_CLASSES': [
+> >			'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+> >		]
+> >	}
+> > </pre>
+>
+> > Now go to both the root urls and you will see there is no form to create a record :
+> > <pre>
+> >	{
+> >		"companies": "http://localhost:8000/api/v1/companies/",
+> >		"employees": "http://localhost:8000/api/v1/employees/"
+> >	}
+> > <pre>
+> 
+> > Now let's try to **create**, **update** or **delete** a company or an employee through **Postman** and see what happens :
+> >
+> > <code>POST</code> &nbsp;&nbsp;&nbsp;&nbsp;=======>&nbsp;&nbsp;&nbsp; <code>http://localhost:8000/api/v1/companies/</code> &nbsp;&nbsp;&nbsp;&nbsp;=======>&nbsp;&nbsp;&nbsp;&nbsp; **ERROR - 403 Forbidden :**&nbsp; _Authentication credentials were not provided_.
+> >
+> > Similarly try to delete or update a companyor an employee, you will get the same **403 Forbidden Error**.
+>
+> > Similarly, to completely disable the browsable API i.e, to disable even the read (GET) operation on a browser, you need to pass <code>JSONRenderer</code> to your <code>Default_Renderer_Classes</code> like the following :
+> >
+> > <pre>
+> >	REST_FRAMEWORK = {
+> >		'DEFAULT_RENDERER_CLASSES': [
+> >			'rest_framework.renderers.JSONRenderer'
+> >		]
+> >	}
+> > </pre>
 
-Now if you want to allow only the READ operation on the browser so that the CREATE, UPDATE & DELETE operations can only be done through Application backend, you will have to disable the permissions accordingly for unauthenticated user like the foolowing :
 
-company_api/company_drf_api/settings.py       ----->     
-
-															REST_FRAMEWORK = {
-																# Use Django's standard `django.contrib.auth` permissions,
-																# or allow read-only access for unauthenticated users.
-																'DEFAULT_PERMISSION_CLASSES': [
-																	'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-																]
-															}
-
-
-Now go to both the root urls and you will see there is no form to create a record:
-															{
-																"companies": "http://localhost:8000/api/v1/companies/",
-																"employees": "http://localhost:8000/api/v1/employees/"
-															}
-												
-												
-Now let's try to create, delete or update a company or an employee through Postman and see what happens :
-
-POST  ==>  http://localhost:8000/api/v1/companies/      =======>  ERROR - 403 Forbidden : Authentication credentials were not provided.
-{
-    "name": "Bharat LLM",
-    "location": "Hyderabad",
-    "about": "It is an AI company working on India's own indegenious large language model.",
-    "type": "IT",
-    "active": true,
-    "ceo": "Bechan Mishra"
-}
-
-Similarly try to delete or update a companyor an employee, you will get the same 403 Forbidden Error.
-
-Now similarly to disable even the browsable API i.e, to disable even the read (GET) operation on browser, you need to pass JSONRenderer to your Default_Renderer_Classes like the following :
-
-															REST_FRAMEWORK = {
-																'DEFAULT_RENDERER_CLASSES': [
-																	'rest_framework.renderers.JSONRenderer'
 																]
 															}
 															
