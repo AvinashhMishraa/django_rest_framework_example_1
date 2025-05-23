@@ -460,12 +460,14 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > >		"employees": "http://localhost:8000/api/v1/employees/"
 > >	}
 > > <pre>
+> <br>
 > 
 > > Now let's try to **create**, **update** or **delete** a company or an employee through **Postman** and see what happens :
 > >
 > > <code>http://localhost:8000/api/v1/companies/</code> &nbsp;&nbsp;&nbsp;&nbsp;===>&nbsp;&nbsp;&nbsp;&nbsp; **ERROR - 403 Forbidden :**&nbsp; _Authentication credentials were not provided_.
 > >
 > > Similarly try to delete or update a companyor an employee, you will get the same **403 Forbidden Error**.
+> <br>
 >
 > > Similarly, to completely disable the browsable API i.e, to disable even the read (GET) operation on a browser, <br>
 > > you need to pass <code>JSONRenderer</code> to your <code>Default_Renderer_Classes</code> like the following :
