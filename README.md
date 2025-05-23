@@ -390,7 +390,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 So now that you have seen how to create **root URLs**, let's see how to create a **custom URL** :
 
-<br><br>
+<br>
 
 > ⭐ **Custom URL**
 > 
