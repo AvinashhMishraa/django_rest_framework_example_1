@@ -198,7 +198,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>														
 
-⭐ &nbsp;**Migrations**
+> ⭐ &nbsp;**Migrations**
 > > How to add a new column <code>ceo</code> to an already existing model <code>Company</code> ?
 > >
 > > <code>company_api/api/models.py</code>
