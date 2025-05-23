@@ -432,7 +432,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > > 		return Response({
 > > 			'message' : 'Company might not exist !! ERROR'
 > > 		})
-> > </pre> <br>
+> > </pre>
 >
 > <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;➜&nbsp; does not throw error for company 4 even if it does not exist <br>
 > <code>http://localhost:8000/api/v1/companies/5/employees/</code> &nbsp;➜&nbsp; now works even when there is no company 5
