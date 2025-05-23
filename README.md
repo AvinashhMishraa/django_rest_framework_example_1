@@ -394,6 +394,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 
 > ⭐ **Custom URL**
 > <br>
+> 
 > <code>http://localhost:8000/api/v1/companies/1/employees</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; All employee of company 1 &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; Page not found (404) <br>
 > <code>http://localhost:8000/api/v1/companies/{company_id}/employees</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; how to get all employees of a particular company ?
 > <br><br>
