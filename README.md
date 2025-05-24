@@ -490,6 +490,8 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 
 Now let's handle the things as **admin** :
 
+<br>
+
 > **Admin**
 >
 > > For that we need to first register our models at &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code>company_api/api/admin.py</code>
