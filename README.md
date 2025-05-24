@@ -270,7 +270,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > <code>company_api/api/models.py</code>
 > <pre>
 > class Company(models.Model):
->      company_id = models.CharField(max_length=100, null=True, blank=True)              # new column
+>    company_id = models.CharField(max_length=100, null=True, blank=True)              # new column
 > </pre>
 
 <br>
