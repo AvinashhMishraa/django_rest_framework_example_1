@@ -463,9 +463,10 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > > {
 > >        "companies": "http://localhost:8000/api/v1/companies/",
 > >        "employees": "http://localhost:8000/api/v1/employees/"
+> > }
 > > <pre>
->
 > <br>
+>
 > > Now let's try to **create**, **update** or **delete** a company or an employee through **Postman** and see what happens :
 > >
 > > <code>http://localhost:8000/api/v1/companies/</code> &nbsp;&nbsp;&nbsp;&nbsp;===>&nbsp;&nbsp;&nbsp;&nbsp; **ERROR - 403 Forbidden :**&nbsp; _Authentication credentials were not provided_.
