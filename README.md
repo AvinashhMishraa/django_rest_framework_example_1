@@ -488,27 +488,34 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 
 <br>
 
-Now let's handle the things as admin :
+Now let's handle the things as **admin** :
 
-For that we need to first register our models at 	-----   api/admin.py
+> **Admin**
+>
+> > For that we need to first register our models at &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code>company_api/api/admin.py</code>
+> > <pre>
+> > from api.models import Company, Employee
+> > admin.site.register(Company)
+> > admin.site.register(Employee)
+> > </pre>
+>
+> <code>http://localhost:8000/admin/</code> &nbsp;&nbsp;&nbsp;&nbsp; <code>http://localhost:8000/admin/login/?next=/admin/</code>
+>
+> You will not be able to login because you have not created a superuser yet.
+>
+> <code>python manage.py createsuperuser</code>
+>
+> > To delete a user &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;Open the ORM using the command &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code><python manage.py shell></code>
+> > <pre>
+> > user = User.objects.get(username='admin')
+> > user.delete()
+> > </pre>
 
-															from api.models import Company, Employee
-															admin.site.register(Company)
-															admin.site.register(Employee)
+<br>
 
+---
 
-http://localhost:8000/admin/    --------    http://localhost:8000/admin/login/?next=/admin/
-
-python manage.py createsuperuser
-
-
-To delete a user :       Open the ORM using the command     ----    <python manage.py shell>
-
-																	user = User.objects.get(username='admin')
-																	user.delete()
-
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<br>
 
 To customize the Django Admin :                             api/admin.py
 						
