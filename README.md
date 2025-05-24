@@ -460,10 +460,10 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > 
 > > Now go to both the root urls and you will see there is no form to create a record :
 > > <pre>
-> >	{
-> >		"companies": "http://localhost:8000/api/v1/companies/",
-> >		"employees": "http://localhost:8000/api/v1/employees/"
-> >	}
+> > {
+> >        "companies": "http://localhost:8000/api/v1/companies/",
+> >        "employees": "http://localhost:8000/api/v1/employees/"
+> > }
 > > <pre>
 > <br>
 > 
