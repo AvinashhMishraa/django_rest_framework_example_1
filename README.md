@@ -478,19 +478,14 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > > you need to pass <code>JSONRenderer</code> to your <code>Default_Renderer_Classes</code> like the following :
 > >
 > > <pre>
-> >	REST_FRAMEWORK = {
-> >		'DEFAULT_RENDERER_CLASSES': [
-> >			'rest_framework.renderers.JSONRenderer'
-> >		]
-> >	}
+> > REST_FRAMEWORK = {
+> >	'DEFAULT_RENDERER_CLASSES': [
+> >		'rest_framework.renderers.JSONRenderer'
+> >	]
+> > }
 > > </pre>
 
-
-																]
-															}
-															
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<br>
 
 Now let's handle the things as admin :
 
