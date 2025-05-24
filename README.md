@@ -479,9 +479,9 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > >
 > > <pre>
 > > REST_FRAMEWORK = {
-> >	'DEFAULT_RENDERER_CLASSES': [
-> >		'rest_framework.renderers.JSONRenderer'
-> >	]
+> >    'DEFAULT_RENDERER_CLASSES': [
+> >        'rest_framework.renderers.JSONRenderer'
+> >    ]
 > > }
 > > </pre>
 
