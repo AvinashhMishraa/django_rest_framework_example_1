@@ -102,8 +102,8 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 > # Company serializer
 > class CompanySerializer(serializers.HyperlinkedModelSerializer):
 >    class Meta:
->	     model = Company
->	     fields = "__all__
+>        model = Company
+>        fields = "__all__
 > </pre>																	 
 
 <br>
