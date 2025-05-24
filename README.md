@@ -505,7 +505,7 @@ Now let's handle the things as **admin** :
 >
 > You will not be able to login because you have not created a superuser yet.
 >
-> <code>python manage.py createsuperuser</code>
+> <code>python manage.py createsuperuser</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# To create a super user for admin access
 >
 > > To delete a user &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;Open the ORM using the command &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code><python manage.py shell></code>
 > > <pre>
