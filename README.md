@@ -341,7 +341,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 >                                     ('Software Developer', 'SD'),
 >                                     ('Project Leader', 'PL')
 >                                 )
->               	    )
+>               	      )
 >     company = models.ForeignKey(Company, on_delete=models.CASCADE)                  # company_id = Foreign Key
 > </pre>
 > 
