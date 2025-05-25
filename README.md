@@ -515,7 +515,7 @@ Now let's handle the things as **admin** :
 
 <br>
 
-> To customize the Django Admin : /,br>
+> To customize the Django Admin : <br>
 > <code>api/admin.py</code>
 > <pre>				
 > class CompanyAdmin(admin.ModelAdmin):
@@ -526,7 +526,4 @@ Now let's handle the things as **admin** :
 >    list_display = ('name', 'email', 'company', 'position')
 >    search_fields = ('name', 'email',)                        #  search_fields = ('name', 'email', 'company',) will throw foreign key error
 >    list_filter = ('company',)                                #  to filter employees based on company filter
->
-> admin.site.register(Company, CompanyAdmin)
-> admin.site.register(Employee, EmployeeAdmin)
 > </pre>
