@@ -63,7 +63,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
-> To create a REST API called <code>api</code>
+> To create a **REST API** called "api"
 > <pre>
 > py manage.py startapp api
 > </pre>
