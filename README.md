@@ -507,7 +507,7 @@ Now let's handle the things as **admin** :
 >
 > <code>python manage.py createsuperuser</code> &nbsp;&nbsp;&nbsp;&nbsp;# To create a super user for admin access
 >
-> > To delete a user &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;Open the ORM using the command &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code><python manage.py shell></code>
+> > To delete a user &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;Open the ORM using the command&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code><python manage.py shell></code>
 > > <pre>
 > > user = User.objects.get(username='admin')
 > > user.delete()
