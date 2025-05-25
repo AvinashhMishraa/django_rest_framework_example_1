@@ -515,8 +515,7 @@ Now let's handle the things as **admin** :
 
 <br>
 
-> To customize the Django Admin : <br>
-> <code>api/admin.py</code>
+> To customize the Django Admin &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code>api/admin.py</code>
 > <pre>				
 > class CompanyAdmin(admin.ModelAdmin):
 >    list_display = ('name', 'location', 'type', 'active')
