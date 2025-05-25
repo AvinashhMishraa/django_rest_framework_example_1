@@ -515,7 +515,7 @@ Now let's handle the things as **admin** :
 
 <br>
 
-> To customize the Django Admin :
+> To customize the Django Admin : /,br>
 > <code>api/admin.py</code>
 > <pre>				
 > class CompanyAdmin(admin.ModelAdmin):
