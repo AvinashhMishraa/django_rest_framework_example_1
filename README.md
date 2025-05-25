@@ -515,25 +515,18 @@ Now let's handle the things as **admin** :
 
 <br>
 
----
-
-<br>
-
-To customize the Django Admin :                             api/admin.py
-						
-															class CompanyAdmin(admin.ModelAdmin):
-																list_display = ('name', 'location', 'type', 'active')
-																    search_fields = ('name',)
-															
-															class EmployeeAdmin(admin.ModelAdmin):
-																list_display = ('name', 'email', 'company', 'position')
-																search_fields = ('name', 'email',)       #  search_fields = ('name', 'email', 'company',) will throw foreign key error
-																list_filter = ('company',)               #  to filter employees based on company filter
-																
-																
-
-															admin.site.register(Company, CompanyAdmin)
-															admin.site.register(Employee, EmployeeAdmin)
-															
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+> To customize the Django Admin :
+> <code>api/admin.py</code>
+> <pre>				
+> class CompanyAdmin(admin.ModelAdmin):
+>    list_display = ('name', 'location', 'type', 'active')
+>    search_fields = ('name',)
+>
+> class EmployeeAdmin(admin.ModelAdmin):
+>    list_display = ('name', 'email', 'company', 'position')
+>    search_fields = ('name', 'email',)                        #  search_fields = ('name', 'email', 'company',) will throw foreign key error
+>    list_filter = ('company',)                                #  to filter employees based on company filter
+>
+> admin.site.register(Company, CompanyAdmin)
+> admin.site.register(Employee, EmployeeAdmin)
+> </pre>
