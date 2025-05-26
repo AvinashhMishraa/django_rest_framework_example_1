@@ -1,19 +1,18 @@
 https://www.django-rest-framework.org/#quickstart <br>
 https://www.geeksforgeeks.org/django-rest-framework-adding-additional-field-to-modelserializer/
 <br><br>
-Create a project folder <code>company_api</code>                                                                                                                                   <br>
-Go into it through a terminal either using <code>cmd</code> , <code>powershell</code>, <code>gitbash</code> or any <code>code editior</code>                                       <br>
-<code>py --version</code> &nbsp;&nbsp;--------------------------------------------&nbsp;&nbsp; to see the python version                                                               <br>
-<code>py</code> &nbsp;&nbsp;--------------------------------------------------------&nbsp;&nbsp; to start a python terminal. If you want to exit, use <code>exit()</code>              <br>
-<code>pip install --upgrade pip</code> &nbsp;&nbsp;-----------------------------&nbsp;&nbsp; <code>python.exe -m pip install --upgrade pip</code> &nbsp;&nbsp; to upgrade **pip**
-<code>python.exe -m pip install --upgrade pip</code>  <br>
-<code>pip list</code> &nbsp;&nbsp;-------------------------------------------------&nbsp;&nbsp; to show all the packages we already have in the global scope of the system             <br>
-<code>pip freeze</code> &nbsp;&nbsp;-----------------------------------------------&nbsp;&nbsp; to show all the packages we already have in the global scope of the system             <br>
-<code>py -m venv env</code> &nbsp;&nbsp;------------------------------------------&nbsp;&nbsp; to create an **environment** to keep only necessary packages required for the project <br>
-<code>./env/Scripts/activate</code> &nbsp;&nbsp;---------------------------------&nbsp;&nbsp; to activate the virtual environment in **Windows**  <br>
-<code>pip freeze</code> &nbsp;&nbsp;-----------------------------------------------&nbsp;&nbsp; nothing in the virtual environement as of now <br>
-<code>pip install django</code>  &nbsp;&nbsp;--------------------------------------&nbsp;&nbsp;  to install Django <br>
-<code>pip freeze</code> &nbsp;&nbsp;-----------------------------------------------&nbsp;&nbsp; to check what all dependencies got installed alomng with Django <br>
+Create a project folder <code>company_api</code>  <br>
+Go into it through a terminal either using <code>cmd</code> , <code>powershell</code>, <code>gitbash</code> or any <code>code editior</code>  <br>
+<code>py --version</code> &nbsp;&nbsp;--------------------------------------------&nbsp;&nbsp; to see the python version  <br>
+<code>py</code> &nbsp;&nbsp;--------------------------------------------------------&nbsp;&nbsp; to start a python terminal. If you want to exit, use <code>exit()</code>  <br>
+<code>pip install --upgrade pip</code> &nbsp;&nbsp;-----------------------------&nbsp;&nbsp; <code>python.exe -m pip install --upgrade pip</code> &nbsp;&nbsp; to upgrade **pip**  <br>
+<code>pip list</code> &nbsp;&nbsp;-------------------------------------------------&nbsp;&nbsp; to show all the packages we already have in the global scope of the system   <br>
+<code>pip freeze</code> &nbsp;&nbsp;-----------------------------------------------&nbsp;&nbsp; to show all the packages we already have in the global scope of the system   <br>
+<code>py -m venv env</code> &nbsp;&nbsp;------------------------------------------&nbsp;&nbsp; to create an **environment** to keep only necessary packages required for the project  <br>
+<code>./env/Scripts/activate</code> &nbsp;&nbsp;---------------------------------&nbsp;&nbsp; to activate the virtual environment in **Windows* <br>
+<code>pip freeze</code> &nbsp;&nbsp;-----------------------------------------------&nbsp;&nbsp; nothing in the virtual environement as of now  <br>
+<code>pip install django</code>  &nbsp;&nbsp;--------------------------------------&nbsp;&nbsp;  to install Django  <br>
+<code>pip freeze</code> &nbsp;&nbsp;-----------------------------------------------&nbsp;&nbsp; to check what all dependencies got installed alomng with Django  <br>
 <code>django-admin startproject company_drf_api</code> &nbsp;&nbsp;-----------&nbsp;&nbsp; use **dot** to create the files at the **root folder**   <br>
 <code>py manage.py runserver</code> &nbsp; <code>py ./manage.py runserver</code> &nbsp;&nbsp;-&nbsp;&nbsp; <code>http://127.0.0.1:8000/</code>  &nbsp;&nbsp;or&nbsp;&nbsp;  <code>http://localhost:8000/</code>
 
