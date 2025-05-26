@@ -48,6 +48,11 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 
 <br>
 
+In **Django**, we render a **HTML template** through a function to feed the data in a context. <br>
+Whereas in **Django Rest Framework**, we directly dump data into a **JSON response** as an **API** for the frontend to consume.
+
+<br>
+
 > To install Django REST Framework
 > <pre>
 > pip install djangorestframework                                 
