@@ -449,8 +449,8 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > > ```
 > <br>
 > 
-> <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;➜&nbsp; does not throw error for company 4 even if it does not exist <br>
-> <code>http://localhost:8000/api/v1/companies/5/employees/</code> &nbsp;➜&nbsp; now works even when there is no company 5
+> http://localhost:8000/api/v1/companies/4/employees/ &nbsp;➜&nbsp; does not throw error for company 4 even if it does not exist <br>
+> http://localhost:8000/api/v1/companies/5/employees/ &nbsp;➜&nbsp; now works even when there is no company 5
 
 <br>
 
@@ -461,9 +461,9 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > > REST_FRAMEWORK = {
 > >    # Use Django's standard `django.contrib.auth` permissions,
 > >    # or allow read-only access for unauthenticated users.
-> >        'DEFAULT_PERMISSION_CLASSES': [
-> >            'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-> >        ]
+> >    'DEFAULT_PERMISSION_CLASSES': [
+> >        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+> >    ]
 > > }
 > > ```
 > <br>
@@ -473,7 +473,8 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > > {
 > >    "companies": "http://localhost:8000/api/v1/companies/",
 > >    "employees": "http://localhost:8000/api/v1/employees/"
-> > } ```
+> > }
+> > ```
 > <br>
 >
 > > Now let's try to **create**, **update** or **delete** a company or an employee through **Postman** and see what happens :
