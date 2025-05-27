@@ -21,24 +21,24 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <br>
 
 > create a file called <code>company_api/company_drf_api/views.py</code>
-> <pre>
+> ```
 > from django.http import HttpResponse
 >
 > def home_page(request):
 >	  print("home page requested")
 >	  return HttpResponse("This is homepage")           # return HttpResponse("This is homepage")
-> </pre>
+> ```
 
 <br>
 
 > <code>company_api/company_drf_api/urls.py</code>
-> <pre>
+> ```
 > from .views import home_page
 > 
 > urlpatterns = [
 >	  path('home', home_page)
 > ]
-> </pre>
+> ```
 
 <br>
 
@@ -54,32 +54,32 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 <br>
 
 > To install Django REST Framework
-> <pre>
+> ```
 > pip install djangorestframework                                 
-> </pre>
+> ```
 
 <br>
 
 > <code>company_api/company_drf_api/settings.py</code>
-> <pre>
+> ```
 > INSTALLED_APPS = [
 >	  ...,
 >	  'rest_framework',
 > ]
-> </pre>
+> ```
 
 <br>
 
 > To create a **REST API** called "api"
-> <pre>
+> ```
 > py manage.py startapp api
-> </pre>
+> ```
 > It will not create a separate <code>settings.py</code> file. Rather it will consider the already created <code>settings.py</code> file in the <code>company_drf_api</code> folder.
 																
 <br>
 
 > <code>company_api/api/model.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; create a **model** called <code>Company</code>
-> <pre>
+> ```
 > from django.db import models
 >
 > # Company model
@@ -98,12 +98,12 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 >    added_date = models.DateTimeField(auto_now=True)
 >    active = models.BooleanField(default=True)
 >    ceo = models.CharField(max_length=100, null=True, blank=True
-</pre>
+> ```
 
 <br>
 
 > <code>company_api/api/serializers.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; create a **Company Serializer** <code>CompanySerializer()</code>
-> <pre>
+> ```
 > from rest_framework import serializers
 > from api.models import Company
 >
@@ -112,12 +112,12 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 >    class Meta:
 >        model = Company
 >        fields = "__all__"
-> </pre>																	 
+> ```																 
 
 <br>
 
 > <code>company_api/api/views.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; create a **Company view**  called <code>CompanyViewSet()</code>
-> <pre>
+> ```
 > from django.shortcuts import render
 > from rest_framework import viewsets
 > from api.models import Company
@@ -127,12 +127,12 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > class CompanyViewSet(viewsets.ModelViewSet):
 >    queryset = Company.objects.all()
 >    serializer_class = CompanySerializer
-> </pre>
+> ```
 
 <br>
 
 > <code>company_api/api/urls.py</code> 
-> <pre>
+> ```
 > from django.contrib import admin
 > from django.urls import path, include
 > from api.views import CompanyViewSet
@@ -144,28 +144,28 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > urlpatterns = [
 >	  path('', include(router.urls))
 > ]
-</pre>
+> ```
 
 <br>
 
 > <code>company_api/company_drf_api/settings.py</code> 
-> <pre>
+> ```
 > INSTALLED_APPS = [
 >	  ...,
 >	  'api'
 > ]
-> </pre>																	
+> ```																
 
 <br>
 
 > <code>company_api/company_drf_api/urls.py</code>
-> <pre>
+> ```
 > from django.urls import include	
 > url_patterns = [
 >	  ...,
 >	  path("api/v1/",include('api.urls'))
 > ]
-</pre>
+> ```
 
 <br>
 
@@ -185,24 +185,24 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 <br>
 
 > <code>company_api/api/serializers.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; to expose the <code>id</code> of the companies in the JSON output, just add the following line :
-> <pre>
+> ```
 > class CompanySerializer(serializers.HyperlinkedModelSerializer):
 >    id = serializers.ReadOnlyField()
-> </pre>
+> ```
 
 <br>
 
 > To see a **table structure** & it's **definition**, use the following query in the DB browser for **SQLite** :
 >
-> <pre>
+> ```
 > PRAGMA table_info('api_company');
-> </pre>
+> ```
 >
-> <pre>
+> ```
 > SELECT sql 
 > FROM sqlite_master 
 > WHERE type = 'table' AND name = 'api_company';
-> </pre>
+> ```
 
 <br>														
 
