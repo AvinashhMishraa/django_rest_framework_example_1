@@ -216,7 +216,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > > ```
 > >
 > > <code>py manage.py makemigrations</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp; <code>py manage.py makemigrations --name <migration_file_name></code> <br>
-> > <pre>
+> > ```
 > > class Migration(migrations.Migration):
 > >    operations = [
 > >        migrations.AddField(
@@ -225,7 +225,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > >            field=models.CharField(blank=True, max_length=100, null=True),
 > >        ),
 > >    ]
-> > </pre>
+> > ```
 > > <code>py manage.py migrate</code>
 >
 > <br>
