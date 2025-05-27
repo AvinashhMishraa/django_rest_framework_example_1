@@ -43,7 +43,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 <br>
 
 >
-> Now open the home page of the app &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code>http://localhost:8000/home/</code>
+> Now open the home page of the app &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; http://localhost:8000/home/
 >
 
 <br>
