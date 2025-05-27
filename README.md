@@ -427,10 +427,10 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > Suppose you have created 3 companies with id = 1, 2, 3 respectively.  <br>
 > And if you want, you may create some employees too.                   <br>
 > Now let's check the following APIs :                                  <br>
-> <code>http://localhost:8000/api/v1/companies/1/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 1 because it exists
-> <code>http://localhost:8000/api/v1/companies/2/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 2 because it exists
-> <code>http://localhost:8000/api/v1/companies/3/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 3 because it exists
-> <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does not work for company 4 because it may not exist
+> http://localhost:8000/api/v1/companies/1/employees/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 1 because it exists
+> http://localhost:8000/api/v1/companies/2/employees/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 2 because it exists
+> http://localhost:8000/api/v1/companies/3/employees/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; now works for company 3 because it exists
+> http://localhost:8000/api/v1/companies/4/employees/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does not work for company 4 because it may not exist
 > <br><br>
 >
 > > So put it in a **Try-Exception** block like below :
