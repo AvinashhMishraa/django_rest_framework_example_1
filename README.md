@@ -459,8 +459,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > > <code>company_api/company_drf_api/settings.py</code>
 > > ```
 > > REST_FRAMEWORK = {
-> >    # Use Django's standard `django.contrib.auth` permissions,
-> >    # or allow read-only access for unauthenticated users.
+> >    # Use Django's standard `django.contrib.auth` permissions, or allow read-only access for unauthenticated users
 > >    'DEFAULT_PERMISSION_CLASSES': [
 > >        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
 > >    ]
