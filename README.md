@@ -235,14 +235,14 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > > - Then create a migration file using <code>py manage.py makemigrations</code> <br>
 > You can use <code>py manage.py makemigrations --empty</code> in case you didn't comment out the code regarding <code>Company()</code> **model**
 > > - And finally in the migration file, just do the following :
-> > <pre>
+> > ```
 > > class Migration(migrations.Migration):
 > >    operations = [
 > >        migrations.DeleteModel(
 > >            name='Company',
 > >        ),
 > >    ]
-> > </pre>
+> > ```
 >
 > <br>
 >
@@ -260,11 +260,11 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > > ∎ &nbsp; To open Django ORM &nbsp;&nbsp;&nbsp;&nbsp; ➜ &nbsp;&nbsp;&nbsp;&nbsp; <code>py ./manage.py shell</code>
 > >
 > > ∎ &nbsp; To update the migration file name on DB Browser for SQLite :
-> > <pre>
+> > ```
 > > UPDATE django_migrations
 > > SET name = 'new_name'
 > > WHERE app = 'api' AND name = 'old_name';
-> > </pre>
+> > ```
 
 <br>
 
@@ -276,10 +276,10 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 <br>
 
 > <code>company_api/api/models.py</code>
-> <pre>
+> ```
 > class Company(models.Model):
 >    company_id = models.CharField(max_length=100, null=True, blank=True)              # new column
-> </pre>
+> ```
 
 <br>
 
@@ -289,7 +289,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 
 > Open the migration file created &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; <code>company_api/api/XXXX_add_company_id_to_company_model_and_populate_it.py</code> <br>
 >
-> <pre>
+> ```
 > from django.db import migrations
 >
 > def copy_ids(apps, schema_editor):
@@ -307,7 +307,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 >        ),
 >        migrations.RunPython(copy_ids)
 >    ]
-> </pre>
+> ```
 
 <br>
 
@@ -318,7 +318,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 <br>
 
 > **Custom Field** &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; How to add an additional field to a ModelSerializer _without actually adding it in the Model_ ?
-> <pre>
+> ```
 > class CompanySerializer(serializers.HyperlinkedModelSerializer):
 >
 >    summary = serializers.SerializerMethodField()
@@ -329,12 +329,12 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > 
 >    def get_summary(self, obj):         
 >        	return f"{obj.name} is a {obj.location} based {obj.type} company"
-> </pre>
+> ```
 		
 <br>
 
 > Now let's create another model called <code>Employee</code> such that a **company** can have many **employees**. So, it's a **One-to-Many** relationship.
-> <pre>
+> ```
 > # Employee model
 > class Employee(models.Model):
 >     name = models.CharField(max_length=100)
@@ -350,7 +350,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 >                                )
 >               	      )
 >     company = models.ForeignKey(Company, on_delete=models.CASCADE)                  # company_id = Foreign Key
-> </pre>
+> ```
 > 
 > <code>py .manage.py makemigrations --name create_employee_model</code>
 >
@@ -359,7 +359,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 <br>
 
 > <code>company_api/api/serializers.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; create a **Employee Serializer** <code>EmployeeSerializer()</code>
-> <pre>
+> ```
 > from api.models import Employee
 >
 > # Employee serializer
@@ -370,12 +370,12 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 >    class Meta:
 >        model = Employee
 >        fields = "__all__"
-> </pre>																	 
+> ```																	 
 
 <br>
 
 > <code>company_api/api/views.py</code> &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; create a **Company view**  called <code>CompanyViewSet()</code>
-> <pre>
+> ```
 > from api.models import Employee
 > from api.serializers import EmployeeSerializer
 >
@@ -383,16 +383,16 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > class EmployeeViewSet(viewsets.ModelViewSet):
 >    queryset = Employee.objects.all()
 >    serializer_class = EmployeeSerializer
-> </pre>
+> ```
 
 <br>
 
 > <code>company_api/api/urls.py</code> 
-> <pre>
+> ```
 > from api.views import EmployeeViewSet
 >
 > router.register(r'employees', EmployeeViewSet)
-</pre>
+> ```
 
 <br>
 
@@ -410,7 +410,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > <br><br>
 >
 > > <code>company_api/api/views.py</code>
-> > <pre>
+> > ```
 > > from rest_framework.decorators import action
 > > from rest_framework.response import Response
 > >						
@@ -421,7 +421,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > >    emps = Employee.objects.filter(company=company)
 > >    emps_serializer = EmployeeSerializer(emps, many=True, context={'request' : request})
 > >    return Response(emps_serializer.data)
-> </pre>
+> > ```
 > <br>
 >
 > Suppose you have created 3 companies with id = 1, 2, 3 respectively.  <br>
@@ -434,7 +434,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > <br><br>
 >
 > > So put it in a **Try-Exception** block like below :
-> > <pre>
+> > ```
 > > def employees(self, request, pk=None):
 > >    try:
 > >        company = Company.objects.get(pk=pk)
@@ -446,7 +446,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > >        return Response({
 > >            'message' : 'Company might not exist !! ERROR'
 > >        })
-> > </pre>
+> > ```
 > <br>
 > 
 > <code>http://localhost:8000/api/v1/companies/4/employees/</code> &nbsp;➜&nbsp; does not throw error for company 4 even if it does not exist <br>
@@ -457,7 +457,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > > Now if you want to allow only the <code>READ</code> operation on a browser so that the <code>CREATE</code>, <code>UPDATE</code> & <code>DELETE</code> operations can only be done through the **Application Backend**, you will have to **disable the permissions** accordingly for unauthenticated users like following :
 > >
 > > <code>company_api/company_drf_api/settings.py</code>
-> > <pre>
+> > ```
 > > REST_FRAMEWORK = {
 > >    # Use Django's standard `django.contrib.auth` permissions,
 > >    # or allow read-only access for unauthenticated users.
@@ -465,15 +465,15 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > >            'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
 > >        ]
 > > }
-> > </pre>
+> > ```
 > <br>
 > 
 > > Now go to both the root urls and you will see there is no form to create a record :
-> > <pre>
+> > ```
 > > {
 > >    "companies": "http://localhost:8000/api/v1/companies/",
 > >    "employees": "http://localhost:8000/api/v1/employees/"
-> > } </pre>
+> > } ```
 > <br>
 >
 > > Now let's try to **create**, **update** or **delete** a company or an employee through **Postman** and see what happens :
@@ -486,13 +486,13 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > > Similarly, to completely disable the browsable API i.e, to disable even the <code>READ</code> (<code>**GET**</code>) operation on a browser, <br>
 > > you need to pass <code>JSONRenderer</code> to your <code>Default_Renderer_Classes</code> like the following :
 > >
-> > <pre>
+> > ```
 > > REST_FRAMEWORK = {
 > >    'DEFAULT_RENDERER_CLASSES': [
 > >        'rest_framework.renderers.JSONRenderer'
 > >    ]
 > > }
-> > </pre>
+> > ```
 
 <br>
 
@@ -503,11 +503,11 @@ Now let's handle the things as **admin** :
 > **Admin**
 >
 > > For that we need to first register our models at &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code>company_api/api/admin.py</code>
-> > <pre>
+> > ```
 > > from api.models import Company, Employee
 > > admin.site.register(Company)
 > > admin.site.register(Employee)
-> > </pre>
+> > ```
 >
 > <code>http://localhost:8000/admin/</code> &nbsp;&nbsp;&nbsp;&nbsp; <code>http://localhost:8000/admin/login/?next=/admin/</code>
 >
@@ -516,15 +516,15 @@ Now let's handle the things as **admin** :
 > <code>python manage.py createsuperuser</code> &nbsp;&nbsp;&nbsp;&nbsp;# To create a superuser for admin access
 >
 > > To delete a user, open the **ORM** using the command <code>python manage.py shell</code> and then execute the following command :
-> > <pre>
+> > ```
 > > user = User.objects.get(username='admin')
 > > user.delete()
-> > </pre>
+> > ```
 
 <br>
 
 > To **customize** the Django Admin &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code>company_api/api/admin.py</code>
-> <pre>
+> ```
 > class CompanyAdmin(admin.ModelAdmin):
 >    list_display = ('name', 'location', 'type', 'active')
 >    search_fields = ('name',)
@@ -533,4 +533,4 @@ Now let's handle the things as **admin** :
 >    list_display = ('name', 'email', 'company', 'position')
 >    search_fields = ('name', 'email',)                        #  search_fields = ('name', 'email', 'company',) will throw foreign key error
 >    list_filter = ('company',)                                #  to filter employees based on company filter
-> </pre>
+> ```
