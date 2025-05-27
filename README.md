@@ -287,7 +287,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 
 <br>
 
-> Open the migration file created &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; <code>company_api/api/XXXX_add_company_id_to_company_model_and_populate_it.py</code> <br>
+> Open the migration file created &nbsp;&nbsp;&nbsp;&nbsp;➜&nbsp;&nbsp;&nbsp;&nbsp; <code>company_api/api/XXXX_add_company_id_to_company_model_and_populate_it.py</code> <br>
 >
 > ```
 > from django.db import migrations
