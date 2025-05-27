@@ -26,7 +26,7 @@ Go into it through a terminal either using <code>cmd</code> , <code>powershell</
 >
 > def home_page(request):
 >	  print("home page requested")
->	  return HttpResponse("This is homepage")           # return HttpResponse("This is homepage")
+>	  return HttpResponse("This is homepage") 		# return HttpResponse("This is homepage")
 > ```
 
 <br>
@@ -212,7 +212,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > > <code>company_api/api/models.py</code>
 > > ```
 > > class Company(models.Model):
-> >	    ceo = models.CharField(max_length=100, null=True, blank=True)              # new column
+> >	    ceo = models.CharField(max_length=100, null=True, blank=True) 		# new column
 > > ```
 > >
 > > <code>py manage.py makemigrations</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp; <code>py manage.py makemigrations --name <migration_file_name></code> <br>
@@ -278,7 +278,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > <code>company_api/api/models.py</code>
 > ```
 > class Company(models.Model):
->    company_id = models.CharField(max_length=100, null=True, blank=True)              # new column
+>    company_id = models.CharField(max_length=100, null=True, blank=True) 		# new column
 > ```
 
 <br>
@@ -295,7 +295,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > def copy_ids(apps, schema_editor):
 >    Company = apps.get_model('api', 'Company')
 >    for company in Company.objects.all():
->        company.company_id = "Bharat_" + company.id               # copy id to company_id
+>        company.company_id = "Bharat_" + company.id 		# copy id to company_id
 >        company.save()
 >
 > class Migration(migrations.Migration):
@@ -349,7 +349,7 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 >                                     ('Project Leader', 'PL')
 >                                )
 >               	      )
->     company = models.ForeignKey(Company, on_delete=models.CASCADE)                  # company_id = Foreign Key
+>     company = models.ForeignKey(Company, on_delete=models.CASCADE) 		# company_id = Foreign Key
 > ```
 > 
 > <code>py .manage.py makemigrations --name create_employee_model</code>
@@ -416,7 +416,7 @@ So now that you have seen how to create **root URLs**, let's see how to create a
 > >						
 > > @action(detail=True, methods=['get'])
 > > def employees(self, request, pk=None):
-> >    # print('get employess of company ', pk)        	  # to check if this method is called by http://localhost:8000/api/v1/companies/1/employees
+> >    # print('get employess of company ', pk) 		# to check if this method is called by http://localhost:8000/api/v1/companies/1/employees
 > >    company = Company.objects.get(pk=pk)
 > >    emps = Employee.objects.filter(company=company)
 > >    emps_serializer = EmployeeSerializer(emps, many=True, context={'request' : request})
@@ -531,6 +531,6 @@ Now let's handle the things as **admin** :
 >
 > class EmployeeAdmin(admin.ModelAdmin):
 >    list_display = ('name', 'email', 'company', 'position')
->    search_fields = ('name', 'email',)                        #  search_fields = ('name', 'email', 'company',) will throw foreign key error
->    list_filter = ('company',)                                #  to filter employees based on company filter
+>    search_fields = ('name', 'email',)                          #  search_fields = ('name', 'email', 'company',) will throw foreign key error
+>    list_filter = ('company',)                                  #  to filter employees based on company filter
 > ```
