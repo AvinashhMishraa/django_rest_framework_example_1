@@ -210,10 +210,10 @@ Whereas in **Django Rest Framework**, we directly dump data into a **JSON respon
 > > How to add a new column <code>ceo</code> to an already existing model <code>Company</code> ?
 > >
 > > <code>company_api/api/models.py</code>
-> > <pre>
+> > ```
 > > class Company(models.Model):
 > >	    ceo = models.CharField(max_length=100, null=True, blank=True)              # new column
-> > </pre>
+> > ```
 > >
 > > <code>py manage.py makemigrations</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp; <code>py manage.py makemigrations --name <migration_file_name></code> <br>
 > > <pre>
