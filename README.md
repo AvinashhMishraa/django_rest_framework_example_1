@@ -1,6 +1,6 @@
 https://www.django-rest-framework.org/#quickstart <br>
 https://www.geeksforgeeks.org/django-rest-framework-adding-additional-field-to-modelserializer/
-<br><br
+<br><br>
 First you need to install Python. <br>
 After installation, you can cheeck where Python is installed by executing <code>where python</code> command in your **command prompt**.
 <br><br>
